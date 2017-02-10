@@ -143,3 +143,141 @@ Atomic Data Types
 - Regex patterns #"a*b"
 
 ---
+Data Structures
+
+- Lists - singly linked, grow at front
+  - (1 2 3 4 5), (fred ethel lucy), (list 1 2 3)
+- Vector - indexed access, grow at end
+  - [1 2 3 4 5], [fred ethel lucy]
+- Maps - key/value associations
+  - {:a 1, :b 2, :c 3}, {1 "ethel" 2 "fred"}
+- Set #{fred ethel lucy}
+- Everything Nests
+
+---
+Persistent Data Structures
+
+- immutable
+- Can make new 'modified' versions while keeping standard performance expectations
+  i.e. not copy-on-write
+- Key to practical functional programming
+
+---
+The Clojure Premise
+
+- We can build a substantial portion of our programs using just the data structures above and pure functions thereof
+- The programs will be substantially smaller, simpler and more robust than OO programs that do the same jobs
+- So, we should make that idiomatic
+
+---
+Syntax
+
+- You've just seen it (edn)
+- Data structures are the code
+- Not text-based syntax
+  - Syntax is in the interpretation of data structures
+- Things that would be declarations, control structures, function calls, operators, are all just lists with op at front
+- Everything is an expression
+
+---
+edn - extensible data notation
+
+- meant to be useful for data and code
+- unlike XML and JSON
+
+```
+{
+	"Fn::Base64": {
+		"Fn::Join": ["", ["#!/bin/bash -ex", "\n", "\n",
+		"yum install ec2-net-utils -y", "\n",
+		"ec2ifup eth1", "\n",
+		"service httpd start"]]
+	}
+}
+```
+
+---
+Data as Program
+
+```
+; Norvig's Spelling Corrector in Clojure
+; http://en.wikibooks.org/wiki/Clojure_programming#Examples
+
+(defn words [text] (re-seq #"[a-z]+" (.tolowerCase text)))
+
+(defn train [features]
+   (reduce (fn [model f] (assoc model f (inc (get model f 1)))) {} features))
+
+(def *rwords* (train (words (slurp "big.txt"))))
+
+(defn edits1 [word]
+   (let [alphabet "abcdefghijklmnopqrstuvwxyz", n (count word)]
+      (distinct (concat
+         (for [i (range n)] (str (subs word 0 i) (subs word (inc i))))
+         (for [i (range (dec n))]
+            (str (subs word 0 i) (nth word (inc i)) (nth word i) (subs word (+ 2 i))))
+         (for [i (range n) c alphabet] (str (subs word 0 i) c (subs word (inc i))))
+         (for [i (range (inc n) c alphabet] (str (subs word 0 i) c (subs word i)))))))
+
+(defn known [words nwords] (for [w words :when (nwords w)] w))
+
+(defn known-edits2 [word nwords]
+   (for [e1 (edits word) e2 (edits1 e1) :when (nwords e2)] e2))
+
+(defn correct [word nwords]
+   (let [candidates (or (known [word] nwords) (known (edits1 word) nwords) (known-edits2 word nwords) [word])]
+      (apply max-key #(get nwords % 1) candidates)))
+```
+
+---
+Data as HTML (Hiccup DSL)
+
+```
+[:html
+   [:head
+      [:title title]]
+   [:body
+      [:h1 title]
+      [:h2 (str "By" author)]
+      (for [post posts]
+         [:article
+            [:h3 (:title post)]
+            [:p (:content post)]])]]
+```
+
+---
+Data as Config
+
+```
+(defproject hiccup "1.0.5"
+   :description "A fast library for rendering HTML in Clojure"
+   :url "http://github.com/weavejester/hiccup"
+   :dependencies [[org.clojure/clojure "1.2.1"]]
+   :plugins [[codox "0.7.4"]]
+
+   :profiles
+   {:1.3 {:dependencies [[org.clojure/clojure "1.3.0"]]}
+    :1.4 {:dependencies [[org.clojure/clojure "1.4.0"]]}
+    :1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}})
+```
+
+---
+Data as Hadoop job (Netflix PigPen)
+
+```
+(defn my-data-2 []
+   (->>
+      (pig/load-tsv "input.tsv")
+      (pig/map (fn [[a b c]]
+                   {:sum (+ (Integer/valueOf a)
+                            (Integer/Value of b))
+                    :name c}))
+       (pig/filter (fn [{:keys [sum]}] (< sum 5)))))
+
+=> (pig/dump (my-data-2))
+[{:sum 3, :name "foo"}]
+```
+
+https://github.com/Netflix/PigPen
+
+---
