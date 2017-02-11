@@ -281,3 +281,263 @@ Data as Hadoop job (Netflix PigPen)
 https://github.com/Netflix/PigPen
 
 ---
+More via Data...
+
+- Type annotations
+- Data schemas
+- Logic DSLs
+  - core.logic
+  - Datalog
+  - Cascalog
+- Your (embedded) DSL
+
+---
+<rant> Objects are like Marionettes
+
+![figure-003](figure-003.png)
+
+---
+More Refs, More Uncertainty
+
+![figure-004](figure-004.png)
+
+---
+Distribution?
+
+- Does anyone still think RMI/DCOM/CORBA is good idea?
+
+![figure-005](figure-005.png)
+
+---
+</rant>
+
+- If your API takes an object, will it mutate?
+  Does your type system help with this most important robustness aspect?
+- If you wanted to refactor out-of-proc (or even onto another thread), how much work?
+- Not the way the world works (ORM, O_M)
+- Not the way successful systems work
+
+---
+Learning from Systems
+
+- system - "to cause to stand"
+- independent parts connected together
+- computer systems
+  - different langs/runtimes/types
+  - RPC and queues, of plain data
+- Flexible insofar as:
+  - support independent development
+  - tolerant in what they accept
+
+![figure-006](figure-006.png)
+
+---
+Outside/In
+
+- We should program the insides of our systems like we program the outsides
+  communicating via immutable data
+- for the same reasons
+  loose coupling/subsystem independence
+  flexibility
+- RPC => PC (function call)
+- queues => channels
+
+---
+Process and State
+
+- Of course there must be state and effects
+- Clojure is not 'pure', but does have *explicit* state constructs
+  functional succession model
+  observation of state *values*
+- core.async offers simple channel (queue) model flow vs places
+
+---
+(Program) Size Matters
+
+- Smaller is better
+- Bigger - more bugs, longer time to market, slower maintenance, more brittleness
+- Concision - size in the small
+- Generality - size in the large
+
+---
+Death by Specificity
+
+- Most information objects are just glorified maps of name->value
+- but you can't treat them as such in Java!
+- more code, less reuse, more coupling
+  need to access each object via its own language(class)
+- this is a complete waste of time (IMO)
+
+---
+Example - HttpServletReqest
+
+![figure-007](figure-007.png)
+
+*How many maps*
+
+---
+Example - HttpServletReqest
+
+![figure-008](figure-008.png)
+
+---
+In Clojure, Just Use Maps
+
+```
+{:remote-addr "127.0.0.1",
+ :scheme :http,
+ :query-params {"somekey" "somevalue"},
+ :form-params {},
+ :request-method :get,
+ :query-string "somekey=somevalue",
+ :content-type nil,
+ :uri "/foobaz",
+ :server-name "localhost",
+ :params {"somekey" "somevalue"},
+ :headers {"accept-encoding" "gzip, deflate",
+           "connection" "close",
+           "user-agent" "Apache-HttpClient/4.1.2(java 1.5)",
+           "content-length" "0",
+           "host" "localhost:8383"},
+ :content-length 0,
+ :server-port 8383,
+ :character-encoding nil}
+```
+
+---
+Specific vs General
+
+- Everything using HttpServletRequest is special
+  - yes, dot completion works and no typos
+-but everything else is much worse
+  - inconsistent, idiosyncratic, wide interfaces
+  - much more code - can't reuse mapmanipulation libraries
+  - consumer code completely coupled
+  - harder to fabricate for testing
+
+---
+Clojure Programs are Smaller
+
+- Very concise code (in the small)
+  dynamic typing
+  direct support for idioms
+- Very generic code (in the large)
+  programming with data abstractions
+  information == plain data
+
+---
+Dynamic Typing
+
+- Yes you can have an error that a type checker would catch
+  - e.g. name typos
+  - likely to catch at REPL or in tests
+
+---
+Quality
+
+- Much more important is avoiding problems that you type checker (and tests) can't catch
+  - state management
+  - coupling
+  - lack of flexibility due to specificity
+  - problems of misconception hidden in morass
+- Clojure's default idioms are big net win
+
+---
+Programming is an Economic Activity
+
+- economic - "relating to household management"
+- Our programming 'house' is a mess
+  full of language features, crutch tools
+  secret passageways
+  dirt (state)
+- Languages and programs are too big
+- Require large staff
+
+---
+There's Much More to Clojure
+
+- Most of it is libraries
+- that can be used independently
+- Small core is protected from bloat
+
+---
+Polymorphism Made Simple
+
+- Clojure protocols
+  - set of functions polymorphic on first arg
+  - Like interfaces, without inheritance
+- Can be extended to existing, even final classes like java.lang.String
+- Greatly reduce coupling vs derivation
+- Avoid the 'privileged native framework'
+
+---
+Ecosystem and Support
+
+- Seamless integration with host platforms
+- Keep leveraging existing libs during transition
+- Clojure is stable
+  not an ongoing programming language experiment
+
+---
+Books
+
+![figure-009](figure-009.png)
+
+---
+Tools
+
+![figure-010](figure-010.png)
+
+Counterclockwise for Eclipse
+
+---
+Tools
+
+![figure-011](figure-011.png)
+
+Cursive for InteliJ
+
+---
+Tools
+
+- leiningen (build tool)
+- Typed Clojure (fancy types)
+- Prismatic Schema (schemas for data)
+- test.check (a la QuickCheck)
+- core.logic (a la Prolog)
+- Immutant (interface to JBoss web stack)
+- many more
+
+---
+Libraries
+
+![figure-012](figure-012.png)
+
+---
+Users
+
+![figure-013](figure-013.png)
+
+---
+![figure-014](figure-014.png)
+
+http://redmonk.com/sogrady/2014/06/13/language-rankings-6-14/
+
+---
+![figure-015](figure-015.png)
+
+http://assets.thoughtworks.com/assets/technology-radar-jan-2014-en.pdf
+
+---
+Companies
+
+![figure-016](figure-016.png)
+
+---
+Clojure
+
+- Better and more flexible programs
+- Sooner
+- because Clojure is data-oriented and simple
+
+---
