@@ -14,6 +14,7 @@ Me
 You
 
 - (dis)contented Java dev?
+   (不)満足なJava開発?
 - Clojure tinkerer?
   'wish I could use it at work'
 - Clojure user
@@ -32,6 +33,9 @@ Adrian Cockcroft - Battery Ventures, formerly Cloud Architect, Netflix
 
 ---
 "A lot of the best programmers and the most productive programmers I know are writing everything in **Clojure** and swearing by it, and then just producting ridiculously sophisticated things in a very short time. And that programmer productivity matters."
+
+「私が知っている最高のプログラマと最も生産的なプログラマの多くは、** Clojure **のすべてを書いており、それによって誓いをつけていて、非常に短時間でばかげて洗練されたものをプロダクトしています。 そしてそのプログラマーの生産性は重要です。」
+
 Adrian Cockcroft
 http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/
 
@@ -39,10 +43,10 @@ http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-cloju
 ---
 Programming is an Economic Activity
 
-- Cost/benefit
-- ROI
-- Time to market
-- Profit
+- Cost/benefit (コスト/利益)
+- ROI (Return On Investment/投資対効果/投資収益率)
+- Time to market (市場投入までの時間)
+- Profit (利益)
 
 ---
 Stakeholders Want
@@ -56,21 +60,20 @@ Something Good
 - ~~Passes all tests~~
 - ~~Type checks~~
  **Programmer-centric means, not ends**
-- Does what it is supposed to do
-- Meets operational requirements
-- Is flexible enough to accommodate change
+- Does what it is supposed to do (それが何をすべきか)
+- Meets operational requirements (運用要件を満たす)
+- Is flexible enough to accommodate change (変化に対応できる柔軟性)
 
 ---
 Does what it is Supposed To Do?
 
-- From the perspective of the stakeholders
-- Very difficult to determine if a large, elaborate stateful program does what it is supposed to do
-- Very difficult to determine if large or elaborate or stateful programs do what they are supposed to do
-
+- From the perspective of the stakeholders (ステークホルダーの視点から)
+- Very difficult to determine if a large, elaborate stateful program does what it is supposed to do (大規模で精巧なステートフルなプログラムが何をすべきかを判断するのは非常に難しい)
+- Very difficult to determine if large or elaborate or stateful programs do what they are supposed to do (大規模で精巧なプログラムやステートフルなプログラムが、自分がやるべきことをしているのかどうかを判断することは非常に難しい)
 ---
 Meets Operational Requirements
 
-- Deployment/environment  <- Shared with Java/
+- Deployment/environment(配備/環境)  <- Shared with Java/
 - Security                <- JavaScript host 
 - Performance
 - Etc.
@@ -85,15 +88,18 @@ Om(ClojureScript lib) on browser ToDoMVC Benchmark
 http://vuejs.org/perf/
 
 ---
-Flexibility
+Flexibility (柔軟性)
 
-- Ability to accommodate inevitable change
-- Loose coupling is key
+- Ability to accommodate inevitable change (不可避的な変化に対応する能力)
+- Loose coupling is key (ゆるやかな結合が重要です)
 
 ---
-"With Clojure we get to market faster and with better quality. We avoid unintended interruptions in Java apps when code in one area impacts the application in another."
+> "With Clojure we get to market faster and with better quality. We avoid unintended interruptions in Java apps when code in one area impacts the application in another."
+> 「Clojureを使用することで、より速くより良い品質で市場に出ることができます。 ある領域のコードが別の領域のアプリケーションに影響を与えると、意図しないJavaアプリケーションの中断を回避できます。」
 
-"Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java."
+
+> "Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java."
+> 「Clojureは、Javaで記述した場合、コードベースを約5分の1に縮小します。」
 
 Anthony Marcar - Senior Architect, WalmartLabs
 
@@ -107,29 +113,29 @@ Anthony Marcar - Senior Architect, WalmartLabs
 ---
 How?
 
-- Data orientetion
-- Simplicity
+- Data orientetion (データの向き)
+- Simplicity (シンプルさ)
 
 What matters is not just what a programming language makes possible, but what it makes practical and idiomatic.
-
+(重要なことは、プログラミング言語が可能にするものだけではなく、実用的で慣用的なことです。)
 ---
-Data Processing
+Data Processing (情報処理)
 
-- Not a dirty word (nor two)
-- Most programs acquire, transform, store, search, manage, transmit data
-- Data is raw, immutable information
-- Many langs turn into something much more elaborate - with types 'methods' etc
+- Not a dirty word (nor two) (汚い言葉でもない（2つではない）)
+- Most programs acquire, transform, store, search, manage, transmit data (ほとんどのプログラムは、データを取得、変換、保存、検索、管理、送信する)
+- Data is raw, immutable information (データは生で不変な情報です)
+- Many langs turn into something much more elaborate - with types 'methods' etc (多くの言語は、タイプのメソッドなどを使って、はるかに精巧なものに変わります。)
 
-esp. OO conflates process constructs and information constructs
+esp. OO conflates process constructs and information constructs (特に OOはプロセス構成と情報構成を融合する)
 
 ---
 Data
 
-- Clojure embraces data
-- Data literals
-- Code is data
-- Majority of functions take/return data
-- Information is represented in Clojure systems as plain data
+- Clojure embraces data (Clojureはデータを受け入れます)
+- Data literals (データリテラル)
+- Code is data (コードはデータです)
+- Majority of functions take/return data (多くの関数がデータを取得/返す)
+- Information is represented in Clojure systems as plain data (情報はClojureシステムでプレーンデータとして表現されます)
 
 ---
 Atomic Data Types
@@ -155,35 +161,35 @@ Data Structures
 - Everything Nests
 
 ---
-Persistent Data Structures
+Persistent Data Structures (永続的なデータ構造)
 
-- immutable
-- Can make new 'modified' versions while keeping standard performance expectations
-  i.e. not copy-on-write
-- Key to practical functional programming
-
----
-The Clojure Premise
-
-- We can build a substantial portion of our programs using just the data structures above and pure functions thereof
-- The programs will be substantially smaller, simpler and more robust than OO programs that do the same jobs
-- So, we should make that idiomatic
+- immutable (不変)
+- Can make new 'modified' versions while keeping standard performance expectations (標準的なパフォーマンスの期待を維持しながら、新しい「変更された」バージョンを作ることができる)
+  i.e. not copy-on-write (コピーオンライトではない)
+- Key to practical functional programming (実用的な関数プログラミングの鍵)
 
 ---
-Syntax
+The Clojure Premise (前提)
 
-- You've just seen it (edn)
-- Data structures are the code
-- Not text-based syntax
-  - Syntax is in the interpretation of data structures
-- Things that would be declarations, control structures, function calls, operators, are all just lists with op at front
-- Everything is an expression
+- We can build a substantial portion of our programs using just the data structures above and pure functions thereof (私たちは、上記のデータ構造とその純粋な機能だけを使用して、プログラムのかなりの部分を構築することができます)
+- The programs will be substantially smaller, simpler and more robust than OO programs that do the same jobs (プログラムは、同じ仕事をするOOプログラムよりも大幅に小さく、シンプルで堅牢です)
+- So, we should make that idiomatic (それで、私たちはその熟語)
 
 ---
-edn - extensible data notation
+Syntax (構文)
 
-- meant to be useful for data and code
-- unlike XML and JSON
+- You've just seen it (edn) (あなたはそれを見たことがあります)
+- Data structures are the code (データ構造はコードです)
+- Not text-based syntax (テキストベースの構文ではない)
+  - Syntax is in the interpretation of data structures (構文はデータ構造の解釈にある)
+- Things that would be declarations, control structures, function calls, operators, are all just lists with op at front (宣言、制御構造、関数呼び出し、演算子となるものは、すべて正面にopで表示されるリストです)
+- Everything is an expression (すべてが表現です)
+
+---
+edn - extensible data notation (拡張可能なデータ記法)
+
+- meant to be useful for data and code (データとコードに役立つもの)
+- unlike XML and JSON (XMLやJSONと違って)
 
 ```
 {
@@ -281,23 +287,23 @@ Data as Hadoop job (Netflix PigPen)
 https://github.com/Netflix/PigPen
 
 ---
-More via Data...
+More via Data... (データ経由でもっと...)
 
-- Type annotations
-- Data schemas
-- Logic DSLs
-  - core.logic
+- Type annotations (注釈を入力)
+- Data schemas (データスキーマ)
+- Logic DSLs (ロジックDSL)
+  - core.logic (core.logic)
   - Datalog
   - Cascalog
-- Your (embedded) DSL
+- Your (embedded) DSL (あなたの（埋め込まれた）DSL)
 
 ---
-<rant> Objects are like Marionettes
+<rant> Objects are like Marionettes (オブジェクトはマリオネットのようなものです)
 
 ![figure-003](figure-003.png)
 
 ---
-More Refs, More Uncertainty
+More Refs, More Uncertainty (より多くの参照、より多くの不確実性)
 
 ![figure-004](figure-004.png)
 
@@ -311,62 +317,62 @@ Distribution?
 ---
 </rant>
 
-- If your API takes an object, will it mutate?
-  Does your type system help with this most important robustness aspect?
-- If you wanted to refactor out-of-proc (or even onto another thread), how much work?
-- Not the way the world works (ORM, O_M)
-- Not the way successful systems work
+- If your API takes an object, will it mutate? (あなたのAPIがオブジェクトを取る場合、それは突然変異するでしょうか？)
+  Does your type system help with this most important robustness aspect? (あなたのタイプシステムは、この最も重要な堅牢性の側面を助けますか？)
+- If you wanted to refactor out-of-proc (or even onto another thread), how much work? (アウトオブプロセス（または別のスレッド）をリファクタリングしたい場合は、どれくらいの作業が必要ですか？)
+- Not the way the world works (ORM, O_M) (世界の仕組みではない（ORM、O_M）)
+- Not the way successful systems work (成功したシステムの仕組みではない)
 
 ---
-Learning from Systems
+Learning from Systems (システムから学ぶ)
 
-- system - "to cause to stand"
-- independent parts connected together
-- computer systems
-  - different langs/runtimes/types
-  - RPC and queues, of plain data
-- Flexible insofar as:
-  - support independent development
-  - tolerant in what they accept
+- system - "to cause to stand" (システム - "立つ原因")
+- independent parts connected together (互いに接続された独立した部品)
+- computer systems (コンピュータシステム)
+  - different langs/runtimes/types (異なる言語/ランタイム/タイプ)
+  - RPC and queues, of plain data (プレーンデータのRPCとキュー)
+- Flexible insofar as: (以下のような柔軟性：)
+  - support independent development (独立した開発をサポートする)
+  - tolerant in what they accept (彼らが受け入れることに寛容)
 
 ![figure-006](figure-006.png)
 
 ---
 Outside/In
 
-- We should program the insides of our systems like we program the outsides
-  communicating via immutable data
-- for the same reasons
-  loose coupling/subsystem independence
-  flexibility
+- We should program the insides of our systems like we program the outsides (私たちはアウトサイドをプログラムするようにシステムの内部をプログラムする必要があります)
+  communicating via immutable data (不変データによる通信)
+- for the same reasons (同じ理由で)
+  loose coupling/subsystem independence (緩いカップリング/サブシステムの独立)
+  flexibility (柔軟性)
 - RPC => PC (function call)
 - queues => channels
 
 ---
-Process and State
+Process and State (プロセスと状態)
 
-- Of course there must be state and effects
-- Clojure is not 'pure', but does have *explicit* state constructs
-  functional succession model
-  observation of state *values*
-- core.async offers simple channel (queue) model flow vs places
-
----
-(Program) Size Matters
-
-- Smaller is better
-- Bigger - more bugs, longer time to market, slower maintenance, more brittleness
-- Concision - size in the small
-- Generality - size in the large
+- Of course there must be state and effects (もちろん状態と効果がなければならない)
+- Clojure is not 'pure', but does have *explicit* state constructs (Clojureは '純粋な'ものではありませんが、*明示的な*状態構造を持っています)
+  functional succession model (機能的継承モデル)
+  observation of state *values* (状態*値の観測*)
+- core.async offers simple channel (queue) model flow vs places (core.asyncは、単純なチャネル（キュー）モデルフローと場所を提供します)
 
 ---
-Death by Specificity
+(Program) Size Matters (（プログラム）サイズの事項)
 
-- Most information objects are just glorified maps of name->value
-- but you can't treat them as such in Java!
-- more code, less reuse, more coupling
-  need to access each object via its own language(class)
-- this is a complete waste of time (IMO)
+- Smaller is better (より小さい方が良い)
+- Bigger - more bugs, longer time to market, slower maintenance, more brittleness (より大きな - より多くのバグ、市場投入までの時間、メンテナンスの遅れ、脆性)
+- Concision - size in the small (簡潔さ - 小サイズで)
+- Generality - size in the large (一般性 - サイズが大きい)
+
+---
+Death by Specificity (特異性による死)
+
+- Most information objects are just glorified maps of name->value (ほとんどの情報オブジェクトは、名前 - >値の栄光マップです)
+- but you can't treat them as such in Java! (しかし、Javaでそれらを扱うことはできません！)
+- more code, less reuse, more coupling (より多くのコード、少ない再利用、より多くのカップリング)
+  need to access each object via its own language(class) (それ自身の言語（クラス）を介して各オブジェクトにアクセスする必要があり、)
+- this is a complete waste of time (IMO) (これは完全な時間の無駄です)
 
 ---
 Example - HttpServletReqest
@@ -405,78 +411,78 @@ In Clojure, Just Use Maps
 ```
 
 ---
-Specific vs General
+Specific vs General (特定のvs一般)
 
-- Everything using HttpServletRequest is special
-  - yes, dot completion works and no typos
--but everything else is much worse
-  - inconsistent, idiosyncratic, wide interfaces
-  - much more code - can't reuse mapmanipulation libraries
-  - consumer code completely coupled
-  - harder to fabricate for testing
-
----
-Clojure Programs are Smaller
-
-- Very concise code (in the small)
-  dynamic typing
-  direct support for idioms
-- Very generic code (in the large)
-  programming with data abstractions
-  information == plain data
+- Everything using HttpServletRequest is special (HttpServletRequestを使用するものはすべて特別です)
+  - yes, dot completion works and no typos (はい、ドット補完は機能し、タイプミスはありません)
+-but everything else is much worse (それ以外のものはずっと悪い)
+  - inconsistent, idiosyncratic, wide interfaces (一貫性がなく、特有の、広いインターフェース)
+  - much more code - can't reuse mapmanipulation libraries (はるかに多くのコード - マップマニュピュレーションライブラリを再利用することはできません)
+  - consumer code completely coupled (完全に結合された消費者コード)
+  - harder to fabricate for testing (テスト用に製造するのが難しい)
 
 ---
-Dynamic Typing
+Clojure Programs are Smaller (Clojureプログラムはより小さい)
 
-- Yes you can have an error that a type checker would catch
-  - e.g. name typos
-  - likely to catch at REPL or in tests
-
----
-Quality
-
-- Much more important is avoiding problems that you type checker (and tests) can't catch
-  - state management
-  - coupling
-  - lack of flexibility due to specificity
-  - problems of misconception hidden in morass
-- Clojure's default idioms are big net win
+- Very concise code (in the small) (非常に簡潔なコード（小）)
+  dynamic typing (動的型付け)
+  direct support for idioms (イディオムの直接サポート)
+- Very generic code (in the large) (非常に汎用的なコード（大規模）)
+  programming with data abstractions (データ抽象化によるプログラミング)
+  information == plain data (情報==プレーンデータ)
 
 ---
-Programming is an Economic Activity
+Dynamic Typing (動的タイピング)
 
-- economic - "relating to household management"
-- Our programming 'house' is a mess
-  full of language features, crutch tools
-  secret passageways
-  dirt (state)
-- Languages and programs are too big
-- Require large staff
+- Yes you can have an error that a type checker would catch (はい、タイプチェッカーがキャッチするエラーが発生する可能性があります)
+  - e.g. name typos (例えば 名前のタイプミス)
+  - likely to catch at REPL or in tests (REPLやテストで遭遇する可能性が高い)
 
 ---
-There's Much More to Clojure
+Quality (品質)
 
-- Most of it is libraries
-- that can be used independently
-- Small core is protected from bloat
-
----
-Polymorphism Made Simple
-
-- Clojure protocols
-  - set of functions polymorphic on first arg
-  - Like interfaces, without inheritance
-- Can be extended to existing, even final classes like java.lang.String
-- Greatly reduce coupling vs derivation
-- Avoid the 'privileged native framework'
+- Much more important is avoiding problems that you type checker (and tests) can't catch (あなたが入力するチェッカー（そしてテスト）が捕まえられない問題を避けることがずっと重要です)
+  - state management (状態管理)
+  - coupling (カップリング)
+  - lack of flexibility due to specificity (特異性による柔軟性の欠如)
+  - problems of misconception hidden in morass (迷惑に隠された誤解の問題)
+- Clojure's default idioms are big net win (Clojureのデフォルトのイディオムは大きなネット勝利です)
 
 ---
-Ecosystem and Support
+Programming is an Economic Activity (プログラミングは経済活動である)
 
-- Seamless integration with host platforms
-- Keep leveraging existing libs during transition
-- Clojure is stable
-  not an ongoing programming language experiment
+- economic - "relating to household management" (経済的 - 「家計調査に関連する」)
+- Our programming 'house' is a mess (プログラミングの「家」が混乱している)
+  full of language features, crutch tools (言語機能、松葉杖ツールの完全な)
+  secret passageways (秘密の通路)
+  dirt (state) (汚れ（状態）)
+- Languages and programs are too big (言語とプログラムが大きすぎます)
+- Require large staff (大規模なスタッフを必要とする)
+
+---
+There's Much More to Clojure (Clojureにはもっとたくさんのことがあります)
+
+- Most of it is libraries (ほとんどが図書館です)
+- that can be used independently (独立して使用できる)
+- Small core is protected from bloat (小さなコアは膨らみから保護されています)
+
+---
+Polymorphism Made Simple (シンプルな多型)
+
+- Clojure protocols (Clojureプロトコル)
+  - set of functions polymorphic on first arg (最初のargで多相関数のセット)
+  - Like interfaces, without inheritance (継承なしのインタフェースと同様)
+- Can be extended to existing, even final classes like java.lang.String (java.lang.Stringのような既存のクラスであっても拡張可能)
+- Greatly reduce coupling vs derivation (カップリング対導出を大幅に削減)
+- Avoid the 'privileged native framework' (「特権的なネイティブフレームワーク」を避ける)
+
+---
+Ecosystem and Support (生態系と支援)
+
+- Seamless integration with host platforms (ホストプラットフォームとのシームレスな統合)
+- Keep leveraging existing libs during transition (移行中に既存のライブラリを活用し続ける)
+- Clojure is stable (Clojureは安定しています)
+  not an ongoing programming language experiment (進行中のプログラミング言語の実験ではありません)
 
 ---
 Books
