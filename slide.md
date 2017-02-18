@@ -34,9 +34,10 @@ Adrian Cockcroft - Battery Ventures, formerly Cloud Architect, Netflix
 ---
 "A lot of the best programmers and the most productive programmers I know are writing everything in **Clojure** and swearing by it, and then just producting ridiculously sophisticated things in a very short time. And that programmer productivity matters."
 
-「私が知っている最高のプログラマと最も生産的なプログラマの多くは、** Clojure **のすべてを書いており、それによって誓いをつけていて、非常に短時間でばかげて洗練されたものをプロダクトしています。 そしてそのプログラマーの生産性は重要です。」
+「私が知っている最高のプログラマと最も生産的なプログラマの多くは、** Clojure **ですべてを書いており、それによって誓いをつけていて、非常に短時間でばかげて洗練されたものを生産しています。 そしてそのプログラマーの生産性は重要です。」
 
 Adrian Cockcroft
+
 http://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/
 
 
@@ -74,7 +75,7 @@ Does what it is Supposed To Do?
 Meets Operational Requirements
 
 - Deployment/environment(配備/環境)  <- Shared with Java/
-- Security                <- JavaScript host 
+- Security                          <- JavaScript host
 - Performance
 - Etc.
 
@@ -94,12 +95,14 @@ Flexibility (柔軟性)
 - Loose coupling is key (ゆるやかな結合が重要です)
 
 ---
-> "With Clojure we get to market faster and with better quality. We avoid unintended interruptions in Java apps when code in one area impacts the application in another."
-> 「Clojureを使用することで、より速くより良い品質で市場に出ることができます。 ある領域のコードが別の領域のアプリケーションに影響を与えると、意図しないJavaアプリケーションの中断を回避できます。」
+ "With Clojure we get to market faster and with better quality. We avoid unintended interruptions in Java apps when code in one area impacts the application in another."
+
+ 「Clojureを使用することで、より速くより良い品質で市場に出ることができます。 ある領域のコードが別の領域のアプリケーションに影響を与えると、意図しないJavaアプリケーションの中断を回避できます。」
 
 
-> "Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java."
-> 「Clojureは、Javaで記述した場合、コードベースを約5分の1に縮小します。」
+ "Clojure shrinks our code base to about one-fifth the size it would be if we had written in Java."
+
+ 「Clojureは、Javaで記述した場合、コードベースを約5分の1に縮小します。」
 
 Anthony Marcar - Senior Architect, WalmartLabs
 
@@ -118,6 +121,7 @@ How?
 
 What matters is not just what a programming language makes possible, but what it makes practical and idiomatic.
 (重要なことは、プログラミング言語が可能にするものだけではなく、実用的で慣用的なことです。)
+
 ---
 Data Processing (情報処理)
 
@@ -298,11 +302,13 @@ More via Data... (データ経由でもっと...)
 - Your (embedded) DSL (あなたの（埋め込まれた）DSL)
 
 ---
-<rant> Objects are like Marionettes (オブジェクトはマリオネットのようなものです)
+``<rant>`` Objects are like Marionettes (オブジェクトはマリオネットのようなものです)
 
 ![figure-003](figure-003.png)
 
----
+
+-----
+
 More Refs, More Uncertainty (より多くの参照、より多くの不確実性)
 
 ![figure-004](figure-004.png)
@@ -315,7 +321,7 @@ Distribution?
 ![figure-005](figure-005.png)
 
 ---
-</rant>
+``</rant>``
 
 - If your API takes an object, will it mutate? (あなたのAPIがオブジェクトを取る場合、それは突然変異するでしょうか？)
   Does your type system help with this most important robustness aspect? (あなたのタイプシステムは、この最も重要な堅牢性の側面を助けますか？)
