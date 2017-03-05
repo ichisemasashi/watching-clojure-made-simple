@@ -1,2 +1,2 @@
-# watching-clojure-made-simple
+# Record of Studies.
 Watching Youtube.
