@@ -1,0 +1,920 @@
+I was always looking for the way to make
+people smile since we get hungry every
+day we have to cook everyday so even
+though cooking is fun doing it every day
+makes it something you've got to do we
+want to inspire people to enjoy cooking
+more
+[Music]
+hi thanks very much for inviting me i
+was told they always like to have
+somebody who's really way outside of the
+community so that would be me
+apparently my my phone booth is parked
+outside but i'm here to talk about
+something that I think you know readily
+cross these languages which is
+simplicity and it's something I think is
+super important and i might like to try
+to imagine a different word is the first
+word in this sentence I don't think
+anything fits better than the word
+simplicity
+so we're going to talk quickly about two
+words mostly because they get completed
+and we need to stop doing that
+so the first word is simple and what it
+means is one fold or one braids or
+twists and you can contrast this with
+complex which means to combine many
+things or to put together two braids
+together things and we just think that
+from easy which in the derivation I like
+means to lie near if you think back when
+it was hard to travel having something
+be nearby made it a lot easier to get
+use whatever then
+if you had to travel or expend effort to
+get it
+she's a very different things when we
+talk about one folder braid we have to
+move away from actually folding because
+we don't fold our software and we can
+look at it in terms of you know maybe a
+piece of software component in your
+software fulfills one role has one
+specific task
+it's about a concept like security or
+scalability or access or authorization
+or calculation or has a dimension but in
+particular I'd want to avoid the word
+one you know getting a fixation on one
+because it doesn't mean that you have
+only one thing it doesn't mean you
+should have interfaces are classes or
+whatever with only one operation or you
+should only have Singleton's it's really
+about the interleaving not the
+cardinality and the main thing that
+distinguishes simplicity from easiness
+for simple from easy as the fact that
+simple is objective we're gonna be able
+to look and we're going to look later in
+this talk it's very specific things we
+do in software and think about how they
+may be twisted together and it's
+something you can go and you can look at
+but there's nothing subjective about it
+and now we have easy right and so again
+we have to make this translation was it
+means to be near doesn't mean you know
+this this this library is easy because i
+don't have to hop on my horse in order
+to get it so we can talk about nearness
+in the same kind of physical sense and
+that means is a part of my toolkit you
+doing normally have it installed is a
+part of the toolkits of people that I
+work with in general visit at hand and
+then this is other notion of being
+nearby which is it familiar to me is
+this something that I already know or
+does it look similar to something that I
+already know is it just a slight
+variation on something that I already
+know that makes it easy right because i
+can say oh I i get that that's just like
+what I know plus one little difference
+and so that makes it easy
+there's a third characteristic of
+something being nearby in this kind of
+set
+which is actually much harder to make
+happen and much much more important
+which is that the thing that you're
+doing is actually near your capabilities
+you can have something installed I can
+install you know something really
+complex and not understand it but you
+know it's nearby maybe even look you
+know may look exactly like something I
+know but may do something completely
+different
+again that's gonna make it hard but most
+most difficult are things that are that
+are complex which means they're gonna
+tax our brains and trying to manipulate
+them in other words it's outside of our
+mental capacity and we never talk about
+this because it's embarrassing to us
+right we are in the mental work filled
+with the work we do is about thinking
+and so we'd hate to say who you know
+this is this is too hard for me to think
+about but it ends up we're all sort of
+in the same boat in terms of how how
+much complexity we can take on and and
+we need to be frank about the fact that
+there's a limit to that but if it's
+actually far away from our capabilities
+it's never going to become easy and yet
+it may be something we have to
+accomplish so what are we going to do
+about that and the other thing about
+easiness and the big difference between
+it and simplicity is its relative right
+something is hard for me because of
+where I come from or what they already
+know something is familiar to you
+because of where you come from or what
+you already know there's always going to
+be a relative aspect to something being
+easy things that are hard for me maybe
+easy for someone else so we get back to
+this notion of that third part right
+what makes something hard for us to
+understand and we start with just basic
+limits right everybody's heard the seven
+plus or minus to limit the number of
+things you can keep in your head and
+it's actually quite analogous to
+juggling limits in terms of the actual
+count of things that you can manipulate
+although of course I said you know when
+I gave similar talk to this once that
+you know our max is 12 somebody said I
+isosurface Elaine somebody could go
+juggle 21 balls and you know of course
+if you can code you should hire him
+right
+that's awesome but we really can only
+think about a couple of things at a time
+and the main problem we have with things
+that aren't simple right because we're
+gonna say they're complex have been
+twisted together is as soon as you twist
+something together when it comes time
+for you to think about it right i have
+to either enhance this part of my system
+have to combine it with something else I
+have to fix a problem in it if I have to
+pull if I pull on that thing I'm trying
+to change and I get this knot of other
+stuff that's connected to it i have to
+load all of that stuff up in order to
+think about it in order to try to solve
+my problem or enhance my software
+because i have to consider all those
+things that together so complexity this
+this timing of things together is going
+to fundamentally undermine our ability
+to understand things and if we don't
+understand them how can we really
+effectively change them or fix them or
+make them better
+so change is really the operative word I
+mean I think we all start our projects
+you know maybe they're mostly startups
+or greenfield whatever it's a beautiful
+day
+we've got our first stand-up we've got
+our methodologies or are you know
+manifestos or practices we want to use
+we have a great idea we've got the
+client involved but you know
+everything's great
+the first week and then the second week
+there we work within as we keep working
+what happens is this
+there's a new participant in our
+stand-up it's growing in the corner of
+the room
+it's this elephant it's called the
+software we've already written the
+elephant of the software written is
+actually going to completely dominate
+what we do so we know we're asked to do
+more right we started we had will do
+something
+ok that first iteration is a breeze
+right we can do something but as we move
+forward we have to take what we already
+have and make it that elephant do more
+make it do it differently make it do
+things better and as we try to take on
+manipulating our software in order to
+have it do new things we're going to be
+challenged
+understand it in order to make that
+happen and I'll contend that we're
+completely gonna be dominated at this
+point once your software is of a certain
+size you'll be dominated by complexity
+I don't care what processes using our
+care how well you test or anything else
+complexity that elephant is going to
+dominate what you can do and you want to
+try to reduce the complexity of the
+software you have so that you can do
+more you know all those other techniques
+and processes are all great and there
+are important but this dominates and
+people you know even people with the
+best practices will talk about you know
+sort of running into a concrete wall in
+terms of what they could accomplish each
+week or each each iteration and it's
+this that's really stopping them from
+from either innovating or or or changing
+but I don't want to characterize
+simplicity as only sort of a defensive
+mechanism something you only use in
+order to you know just stave off the
+complexity elephant I i believe that
+simplicity really buys you opportunity
+in your designs and in fact i will
+contend that architectural agility that
+is to say the agility you get from
+having built a system that's
+fundamentally simple dominates all other
+kinds of agility is it doesn't matter
+what kind of process you have right if
+if you've got the complexity elephant
+over there you're applying the process
+like pushing an elephant ind I mean how
+good can you get at it only so good but
+if you build a simpler system what
+you'll find is that your are you are
+going to be able to make it two
+different things and so you know the
+word architectures like no we don't do
+that anymore right that was like the
+nineties wanted architecture but you
+know if you don't do this you're wasting
+an enormous amount of time and I think
+it's because we sort of demonized design
+and i'm not talking about the way things
+look I'm talking about the way things
+work because we tend to think of design
+as making grand plans for how everything
+is going to go
+that is not actually what good design is
+about good design is about taking things
+apart right most of what a good designer
+does say that is like too much is going
+on in that let's pull that into two
+separate things a good designer
+intuitively does that design is about
+taking things apart once you've done
+this I think it brings genuine
+opportunities for change right if you've
+taken everything apart and you've got
+simple components if you want to make
+them if you want to use them in another
+context that's easier because you have
+to drag something else along with it if
+you want to take something that you were
+doing and say I'd rather do it a
+different way
+that's all so easy right again
+simplicity is buying us easiness is
+buying us ease its buying a civility
+right if we made a simple system it will
+be straightforward to substitute another
+part it will be straightforward to take
+part of a system and say you know what
+we should run a different box or
+different set of boxes or different
+hosting service or just complete change
+the location characteristics of the
+software make because we can because
+we're not trying to drag an elephant
+around
+ditto with combining different parts for
+different problems right we built all
+these parts now we have a new problem
+Oh two of those parts and one new thing
+solves that problem
+this is what happens for you when you
+have simplicity based designs so i would
+i would say pursuing simplicity is
+really about pursuing opportunities this
+is an old dig don't really need to
+explain it because I'd like to just
+modernize it has nothing to do with Lisp
+it's really this right we are so fixated
+with ourselves and our own ease of
+development like I want to sit here I'll
+push a button and everything just
+happens and then this thing comes down
+from the internet and you know i'm in my
+comfy chair and I've got like three
+divisor on
+the and then we look at like
+technologies or libraries or tools that
+we want to adopt and again it's like
+look at benefit like I could do this in
+like 10 seconds faster if i use this or
+you know somebody said this you know has
+this great characteristic we don't
+really look at what we're getting along
+with that and so I think we're very
+self-focused you know we have like a
+culture culture now we have medical
+culture like so infatuated with
+ourselves but we really should be
+thinking about our software because
+that's what we actually do so take the
+foo fighters imagine if the Foo Fighters
+really were mostly concerned about how
+hard it was for themselves right there
+like you know I don't want to learn the
+drums are the guitar the strings they
+hurt my fingers you know this i want
+something that's easy you know that it's
+not really far from what i know because
+i don't know how to play guitar yet and
+so instead of feu fighters they became
+the kazoo fighters right so there's two
+problems with this right one who wants
+to listen to that it's like the
+easy-bake oven
+this is is not going to produce a good
+result
+the other thing which i think is more a
+question ask yourselves who wants to be
+in that band who wants to be in the band
+that consistently chooses the easiest
+possible thing do you want to be in the
+spent i don't so there's a certain
+conflict between programmers and
+programs there need not be but there is
+right
+currently I think we focus on ourselves
+we focus on our own convenience we do
+this actually to our own tremendous
+detriment because our employers leverage
+the fact that we love majin 80 and we
+love familiarity and we're all trying to
+be in the same room doing the same thing
+in the same culture you know just vibing
+on our similarity because that means
+they can replace us easily right they
+don't want a plethora of programming
+languages and all different kinds of
+techniques and tools and ways of
+thinking about things they want one
+because the if they have one
+they can replace you so be careful what
+you wish for
+versus the program's what should be
+really which we really be focusing on we
+should be focused on what we're making
+why are we making it if we're not going
+to focus on it and we could be all happy
+doing other things like drinking
+margaritas by the pool
+that's not a job right that's not a
+productive you know something productive
+member of society we make things we
+should care about what we're making and
+how they come out so we should focus
+instead on the quality of the software
+its correctness our ability to change it
+maintain it and things like that and we
+should be careful when we're choosing
+things that we want to do that we're not
+looking at something saying I like this
+because it's good for me personally
+right now because you know some things
+are really easy right
+gem install some hairball right it's
+it's not far away the complexities like
+so simple to get just grab something off
+the internet and while you're good for
+the moment but what's going to happen
+later with your program so i think
+hairball is really good good analogy
+because it it what you know what is the
+hairballs a bunch of hair assault mangle
+together it really does touch this this
+fundamental notion which this great word
+complex labels it means to interleaver
+entwine or braid right i love this word
+we should say to other people when
+they're ruining our software with a bad
+design decision you are your complexion
+things right now right because braiding
+your braiding it's like kind that
+doesn't really work but complexing works
+because you know it's bad it just sounds
+bad
+they complected my thing I was one on
+vacation I came back and it was all
+complected with this other thing
+so you don't want to do this right this
+is where complexity comes from the word
+comes from this the the result comes
+from this activity taking more than one
+thing and tying them together in a
+little not however easy it made
+something or maybe it didn't do it
+really thinking you just didn't think
+about simplicity you just ended up with
+this is where complexity comes from and
+the more you do it the more difficult it
+will be for you to make good software
+that's reliable and software that you
+can change enhance so this is really
+what you're trying to avoid and and in
+order to avoid you have to develop since
+sensibilities about how to detect what's
+going on
+so how do we make how do we make things
+easy because i'm not saying easy is bad
+i'm saying two parts of easy are really
+straightforward right if you want to
+make something near like in your toolkit
+you know just choose to use it you want
+start using a new thing that's novel
+mean you do have to get over the fact
+that it may not be something you've used
+before may not be in your tool set maybe
+not what your friends use your company
+has approved for use yet but you can do
+that you can get it
+the other thing you can do is you can
+become familiar with it right you can
+learn about new things you can read
+books right if you if you want
+everything to be familiar you'll never
+learn anything new you have to break out
+of that but you can do that that's all
+in your own control but what about this
+last one right
+what if you really have a hard thing to
+tackle can you get smarter it was like
+get smarter for dummies get smarter in
+24 days 24 hours to weeks now we can't
+really get a lot smarter and we're not
+very much smarter or dumber than each
+other we're all smart so if we can if
+we're gonna tackle something more
+complex either because we want to do
+something that's more sophisticated for
+users we want to you know write more
+interesting software solve harder
+problems we need to move them towards us
+they have the inherent complexity that
+complexity that they have we need to
+move them closer to us by making sure
+implementation of them
+is as simple as possible right and
+that's the key we really i really do
+want things to be easy but I want to be
+easy in all three senses if you only
+focus on the first two you're going to
+end up with complexity because you're
+going to have that third one coming from
+the side so this is the basic fact of
+this talk right we can make the same
+exact software making today with
+dramatically simpler stuff dramatically
+simpler languages tools techniques
+approaches like really radically simpler
+radically simpler than Ruby which seems
+really simple
+why aren't we so let's look at some of
+these things i'm not in this talk going
+to break all these down we have a bunch
+of choices that we make right we can
+write stateful programs that are based
+around objects when instead we could
+have written a program that mostly
+manipulates values and occasionally has
+state we should we use stateful methods
+when we could just have an ordinary
+function and ordinary function is much
+much simpler in the sense i'm talking
+about than a method and it's therefore
+easier to test easier to understand easy
+to maintain easier to combine with other
+things
+variables are things that are very
+complex and should be avoided as much as
+possible you may or may not have choices
+in the language that you use every time
+you inherit every time you write it
+involves switch statement or do this
+pattern matching instead of a
+polymorphism construct you're adding
+complexity to your system
+this one is particularly interesting
+syntax syntax is inherently complex
+because the word syntax means associated
+meaning with a order with position right
+that's what it means to have a syntax so
+the wheel when we write the cells as
+like that we have to think about the
+fact that we're adding complexity we
+might choose to we should know that
+that's what we're doing
+looping right we know is
+is a form of complexity because its
+collecting you know variable with the
+work to do and like it's nice and in
+Ruby you have like $MONEY each which is
+a higher level constructed get you out
+of the loop in Game not gonna talk about
+these done you know RM is one of the
+most complex things you could ever touch
+and we choose it over and over and over
+again without thinking at all because
+everybody's doing it
+it is really complex you waste an
+inordinate amount of your time on this
+and you need to look at it
+conditions are things we might be able
+to replace with rules and then you know
+you can look at some of them you know
+cool new database technology that has
+eventual consistency eventual
+consistency is incredibly complex it's
+very very difficult to think about so
+don't choose it unless you really have
+to i really don't know what to say about
+this right this is wrong and we know
+this is wrong why because it says
+simplicity is about you
+we know simplicity is not about you
+right simplicity is about how twisted up
+is the thing that you're making has
+nothing to do with you right and I mean
+in reducing the amount of work to be
+done
+gem install hairball reduces the amount
+of work to be done like for the moment
+right I didn't have to write whenever
+the hairball does i now have a hairball
+that does it for me right
+but then I don't think I mean you guys
+invent James pretty quickly but i don't
+think this is a gem
+oh my god please take all instances of
+this hair ball out of my project what
+were we thinking right although i don't
+know there are a lot of gems out there
+are some really powerful right so it's
+really wrong and it's terrible advice
+absolutely terrible advice right
+simplicity is not about you and
+simplicity is hard work it is actually
+work to do the job of simplifying things
+but this is a huge payoff the person who
+has a generally simpler system a system
+made of genuinely simple parts is going
+to be able to affect the greatest change
+with the least work he's going to kick
+your ass but he's never going to gym
+installed
+hairball he's gonna spend more time
+simplifying things upfront and then the
+long haul he's gonna wipe the plate with
+you because he or she
+because they'll have that ability to
+change things when you're struggling to
+push elephants around this is a much
+nicer uh thought about simplicity right
+it's not an objective necessarily if
+falls out of trying to pull things apart
+into their essential nature's what does
+it mean to be an essential thing so I
+want to end this talk with two examples
+of the way to think about simplicity and
+context because i think i think it's
+important to think that this way
+so what is lists in order to make the
+list and order problem is there a
+problem we all know that lists all right
+there a sequence of things but when you
+see a list of things you're
+automatically confronted with the a
+question right
+does the order in this list matter is it
+a list of things that are all
+semantically the same whereas the list
+it's acting sort of like as a couple of
+three different things right the first
+one here they're all sort of homogeneous
+the second one its depth width height
+it's sort of forming a little you know
+structure with semantics and the problem
+is if you start to use that another
+private program you'll be like what was
+first was it with their dead depth width
+height or width don't you see this
+problem right
+if order matters complexity has been
+introduced into the system and of course
+if you have something like sets in your
+language you can properly call out the
+fact water does not matter
+and by the way there are no duplicates
+so it's prefer that if you can why
+should you care about order
+it's a source of complexity right it
+complex each thing with the next when do
+you see like the negative aspects of
+that any time you use it right every
+usage . that you do will be inflicted
+this will be infected this way because
+you see this when you try to change your
+program
+imagine if you said we're going to write
+this part we're going to pass a list
+with name and email around and he wrote
+a whole bunch of software that you
+leverage that fact and then you said
+haha we need to enhance the software we
+need to put phone in their mystic phone
+in the middle you know you know what
+happens i'm carol fancy your IDs are
+refactoring whatever this is a source of
+bugs and problems it's really difficult
+to do because it's been essentially
+complex and of course everybody i think
+the sitting thing we don't do that right
+we have associate of data structures
+would never do that
+I mean it's actually a language features
+some languages to make couples like that
+a local product types doesn't seem like
+a feature to me but this you know even
+if you don't do this right this
+fundamental problem of order
+it's there it's all over what we do
+because as a concept you can lift it out
+of this context and see where it comes
+up for instance positional arguments to
+functions are an example of this problem
+right
+if you want to a different argument in
+the middle you would have the same
+problem everywhere and there's a way to
+avoid that you can use named arguments
+or map now I'm not saying every language
+should have keyword-based grammar
+calling an enclosure has positional
+arguments but you have to know when
+you're choosing something like that you
+are accepting some complexity here
+hopefully you know you're making a
+trade-off there for some concision right
+syntax I talked about being essentially
+complex if you can use ordinary data
+structures to describe what you want to
+convey your much better often
+introducing syntax so again you have to
+think about it those other things were
+product types we know we could use maps
+or hashes to do that any kind of an
+imperative program will be trumped by a
+declarative program in terms of being
+simpler and not having water problems
+right take an imperative programming
+says set this thing for that to this
+take that other thing and now do this
+and like change the order of the
+segments is now broken you know take a
+sequel program change order it's not
+broken person may be slower and that's a
+different problem
+prologue has this problem versus data
+log another interesting thing we see in
+our programs all the time just chick
+called no calls and of that are chained
+together a cause be called sequels d
+that is a ordered list where the order
+matters right that system is going to be
+harder to change the one that says a
+takes whatever it created and put it in
+a queue and be read from that Q because
+if i want to change that program
+I have an easy time of it right I don't
+need to touch a i can make somebody else
+start consuming that q is unaffected
+doesn't mean you have to put to use
+between everybody has an architectural
+constructs that reduces complexity cues
+are really important
+xml is a great example of this XML was
+designed to support text files where
+order does matter and you can change the
+order of sentences and have the means
+the same thing right but is that we
+should be using for our data are the
+Parsons that work with xml really good
+for data now they are terrible right and
+I think that's why every single Jason
+because the simpler just an angle
+brackets because they're like edgy or
+ugly or something it's not i think
+intuitively people are choosing things
+like JSON or closure literals over xml
+because when they have a map it's a map
+it says it's a map it's inherently a map
+when you're reading your program is not
+gonna be like ooh but you know did the
+order matter would be more than one you
+know all this questioning because the
+it's on the 10 it says what it is
+these are maps these are less its data
+it's a data describing protocol it
+doesn't have any order stuff in it it
+means the Parsons are simple and
+everything else and there's more
+so look for the order program problem in
+your own programs how do you solve this
+just use maps or you call them hashes
+right use them all the time just choose
+to use them
+first-class associated data structures
+rule right you want to use the language
+has idiomatic support for them and
+preaching to the crowd here right we we
+all have this but people that dont
+really suffer you want to leverage the
+fact that you can do generic
+manipulation of these things so choose
+and use this data structure often
+alright second problem take on the
+information problem
+actually it's the information
+non-problem right information is simple
+this is a problem we create for
+ourselves right because we ruin it
+we wrap it up in stupid classes that
+accomplish nothing right
+you'd be much better off ninety percent
+of time you use classes to do data
+things to just use a hash
+instead you be much much better off your
+system would be simpler
+you could write generic data processing
+utilities that didn't have to know about
+your class what you called your get
+whatever thingy you can just use it like
+it like it is it actually is an
+associative piece of information I have
+a name and address that but that's it is
+actually just a simple piece of
+information
+don't put stuff on top of it when you do
+that you end up with a bunch of problems
+tying yourself to representation things
+losing the ability to manipulate things
+generically marrying your representation
+in class names du jour instead of saying
+I know how to process maps or hashes and
+that's what I'll do one of the reasons
+why people choose this frequently
+excuses i went to encapsulate things
+right
+encapsulation is for implementation
+details and information doesn't have
+implementation right until you add some
+gook or some verbs to the piece of
+information
+it doesn't have any implementation
+there's nothing to hide right because
+you're not going to change this aspect
+of it all information that anybody's
+going to actually touch or use has to
+have some representation
+I don't care if it's directly accessible
+through the map or return values and
+arguments to your accessors right you're
+gonna have to expose some representation
+you're not actually getting out of that
+by encapsulating you're actually doing
+any encapsulation so what happens when
+we wrap information this is an example
+from the language has semicolons but you
+know you create this class that has the
+information in it in some verbs and then
+you write services that consume it right
+what happened to you well how can you
+tell again we want to see what kind of
+problems could this create for me you
+can answer that problem I looking and
+asking this question can you move it
+right can I take this thing that I was
+doing this way can I move in
+make it a service that something could
+call right
+can you take the subsystem move it
+around I saw somebody who is advocating
+you know people start designing their
+systems as systems of at us as systems
+of systems right from the get-go like
+make it into six services in the very
+first iteration and I said to the
+process of wow that seems like a lot of
+forethought why can't people more from
+a system of components to a system of
+systems and he said you know what
+because of their languages and the way
+they use them and it was really a
+telling telling thought it is the case
+that we fail to do this because we send
+these verb oriented things around right
+what we want out of something that's
+going to become a subsystem we want to
+have a well defined boundary we want to
+abstract away the operation so the
+service has the verbs right but we have
+to do something about error handling but
+the biggest point is we want to take and
+return data right we don't we don't have
+the same problem we build these these
+object furby things in our programs for
+somebody says it should be on another
+server we immediately stop doing that
+style of programming why do we do that
+right we immediately say it's going to
+be restful is going to pass data is
+going to return data structures we use
+JSON all these great ideas are good over
+here
+what why are they not good inside your
+program in fact they are good inside
+your program you're not doing them
+because of conventions that you know
+you've absorbed from using object
+orientation this is really better and if
+you took this approach here moving this
+to there would be straightforward
+because you would have been programming
+with data all love so again of those
+problems we saw before most of them
+would be solved just by using maps are
+hashes upfront so to wrap up
+simplicity is definitely a choice this
+is not something that will ever fall out
+of tooling or practice or anything else
+you you really need to do this work this
+is the most important work that we do
+because doing this work makes everything
+else we do substantially and deeply
+easier
+you have to get some sensibilities
+around it and thinking about things like
+the order problem or my rapping
+information are the ways you get good at
+simplifying things you have to separate
+simplicity and ease right get some
+sensibilities around entanglement try to
+find entanglement try to have
+conversations about entangle
+try to take part of your stand up and
+say did we entangle anything that we
+complected anything yesterday is this
+next thing we're trying to do complected
+what we already have take a moment to
+have that conversation and now i hope
+you have some language to use for that
+don't lean on your tools they don't
+actually do this part of the job they
+have other attributes but they do not do
+this they do not do this they don't care
+right so you need to choose simple
+things upfront there's a lot of not
+simple simple things in your language
+you need to not choose them unless
+there's really a good reason so i think
+this really matters
+I think it solves two fundamental
+problems with we all encounter everyday
+the first is we need to deal with
+complexity we need to keep it at a
+minimum and the only way to do that is
+by making things simpler sort of obvious
+the other thing though is this
+opportunity part right
+simplicity enables change right
+I think it's the primary source of real
+agility agility means to do something it
+doesn't mean to do it over doesn't mean
+to redo it doesn't mean to undo it means
+to do it means i'm here i'm going to go
+there you know I'm not gonna you know
+one to take everything apart or throw it
+away and then do this next thing I'm
+going to move from here today I'm going
+to directly do that's agility and if
+you're dragging an elephant around
+you're never going to be agile
+so that's it please go make some simple
+things
+[Applause]
+[Music]
