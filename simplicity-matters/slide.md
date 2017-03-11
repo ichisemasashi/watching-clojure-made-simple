@@ -61,4 +61,48 @@ Change
   - More than tests, types, tools, process
 
 ----
+Simplicity = Opportunity
+
+- Architectural Agility wins
+  - else - push the elephant
+- Design is about pulling things apart
+- Repurpose, substitute, move, combine, extend
+          
+----
+LISP programmers know the value of everything and the cost of nothing.
+Alan Perlis
+
+----
+Programmers know the benefits of everything and the tradeoffs of nothing.
+
+----
+Programmers vs Programs
+
+- We focus on ourselves
+  - programmer convenience
+  - programmer replaceability
+- Rather than the programs
+  - software quality, correctness
+  - maintenance, change
+- gem install hairball
+
+----
+Complect
+
+- To interleave, entwine, braid
+- Don’t do it!
+  - Complecting things is the source of complexity
+- Best to avoid in the first place
+
+----
+Making Things Easy
+
+- Bring to hand by installing
+  -  getting approved for use
+- Become familiar by learning, trying
+- But mental capability?
+  - not going to move very far
+- Make challenges easy by simplifying them
+
+----
 
