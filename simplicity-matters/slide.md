@@ -34,5 +34,31 @@ Simple
 - Objective
 
 ----
+Easy
 
+- Near, at hand
+  - on our hand drive, in our tool set, IDE, apt get, gem install
+- Near to our understanding/skill set
+  - familiar
+- Near our capabilities
+- Easy is relative
+- familiar
+
+----
+Limits
+
+- We can only hope to make reliable those things we can understand
+- We can only consider a few things at a time
+- Interwined things must be considered together
+- Complexity undermines understanding
+
+----
+Change
+
+- Do more, Do it differently, Do it better
+- Changes to software require analysis and decisions
+- Your ability to reason about your program is critical
+  - More than tests, types, tools, process
+
+----
 
