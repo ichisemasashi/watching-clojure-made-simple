@@ -105,4 +105,29 @@ Making Things Easy
 - Make challenges easy by simplifying them
 
 ----
+We can be creating the exact same programs out of significantly simpler components
+
+----
+What’s in your Toolkit?
+
+|Complexity|Simplicity|
+|State, Objects|Values|
+|Methods|Functions,Namespaces|
+|Inheritance, switch, matching|Polymorphism ala carte|
+|Syntax|Data|
+|Imperative loops, fold|Set functions|
+|Actors|Queues|
+|ORM|Declarative data manipulation|
+|Conditionals|Rules|
+|Inconsistency|Consistency|
+
+----
+~~Simplicity--the art of maximizing the amount of work not done--is essential.~~
+~~http://agilemanifesto.org/principles.html~~
+
+----
+Simplicity is not an objective in art, but one achieves simplicity despite one's self by entering into the real sense of things
+Constantin Brancusi
+
+----
 
