@@ -2,7 +2,8 @@ Simplicity Matters
 Rich Hickey
 
 ----
-Simplicity is prerequisite for reliability
+> Simplicity is prerequisite for reliability
+
 Edsger W. Dijkstra
 
 ----
@@ -69,7 +70,8 @@ Simplicity = Opportunity
 - Repurpose, substitute, move, combine, extend
           
 ----
-LISP programmers know the value of everything and the cost of nothing.
+> LISP programmers know the value of everything and the cost of nothing.
+
 Alan Perlis
 
 ----
@@ -126,8 +128,120 @@ What’s in your Toolkit?
 ~~http://agilemanifesto.org/principles.html~~
 
 ----
-Simplicity is not an objective in art, but one achieves simplicity despite one's self by entering into the real sense of things
+> Simplicity is not an objective in art, but one achieves simplicity despite one's self by entering into the real sense of things
+
 Constantin Brancusi
 
 ----
+Lists and Order
 
+- A sequence of things
+- Does order matter?
+  - [first-thing second-thing third-thing ...]
+  - [depth width height]
+- set[x y z]
+  - order clearly doesn’t matter
+
+----
+Why Care about Order?
+
+- Complects each thing with the next
+- Infects usage points
+- Inhibits change
+  -  [name email] -> [name phone email]
+- “We don’t do that”
+
+----
+Order in the Wild
+ 
+|Complex |Simple|
+|Positional arguments |Named arguments or map|
+|Syntax |Data|
+|Product types |Associative records|
+|Imperative programs |Declarative programs|
+|Prolog |Datalog|
+|Call chains |Queues|
+|XML |SON, Clojure literals|
+|...||
+
+----
+Maps (aka hashes), Dammit!
+
+- First class associative data structures
+- Idiomatic support
+  - literals, accessors, symbolic keys...
+- Generic manipulation
+- Use ‘em
+
+----
+Information is Simple
+
+- Don’t ruin it
+- By hiding it behind a micro-language
+  - i.e. a class with information-specific methods
+  - thwarts generic data composition
+  - ties logic to representation du jour
+- Represent data as data
+
+----
+Encapsulation
+
+- Is for implementation details
+- Information doesn’t have implementation
+  - Unless you added it - why?
+- Information will have representation
+  - have to pick one
+
+----
+Wrapping Information
+
+- The information class:
+   - IPersonInfo{
+       getName();
+       ... verbs and other awfulness ...}
+- A service based upon it:
+  - IService{
+      doSomethingUseful(IPersonInfo); ...}
+
+----
+Can You Move It?
+
+- Litmus test - can you move your subsystems?
+  - out of proc, different language, different thread?
+- Without changing much
+  - Not seeking transparency here
+
+----
+Subsystems Must Have
+
+- Well-defined boundaries
+- Abstracted operational interface (verbs)
+- General error handling
+- Take/return data
+  - IPersonInfo - oops!
+- Again, maps (hashes)
+
+----
+Simplicity is a Choice
+
+- Requires vigilance, sensibilities and care
+- Equating simplicity with ease and familiarity is wrong
+  - Develop sensibilities around entanglement
+- Your 'reliability' tools (testing, refactoring, type systems)
+  - don't care if program is simple or not
+- Choose simple constructs
+
+----
+Simplicity Matters
+
+- Complexity inhibits understanding
+  - and therefor robustness
+- Simplicity enables change
+  - It is the primary source of true agility
+- Simplicity = Opportunity
+- Go make (simple) things
+
+----
+> Simplicity is the ultimate sophistication.
+
+Leonardo da Vinci
