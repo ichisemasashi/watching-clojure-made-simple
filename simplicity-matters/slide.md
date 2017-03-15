@@ -25,54 +25,54 @@ Word Origins
   vs hard ハードと対戦
     
 ----
-Simple
+Simple シンプル
 
-- One fold/braid
-  - One role
-  - One task
-  - One concept
-  - One dimension
+- One fold/braid 1つ折り/編組
+  - One role 1つの役割
+  - One task 1つのタスク
+  - One concept 一つのコンセプト
+  - One dimension 一次元
 
-- But not
-  - One instance
-  - One operation
-- About lack of interleaving, not cardinality
-- Objective
-
-----
-Easy
-
-- Near, at hand
-  - on our hand drive, in our tool set, IDE, apt get, gem install
-- Near to our understanding/skill set
-  - familiar
-- Near our capabilities
-- Easy is relative
-- familiar
+- But not だがしかし
+  - One instance 1つのインスタンス
+  - One operation 1回の操作
+- About lack of interleaving, not cardinality カーディナリティではなくインターリーブの欠如について
+- Objective 目的
 
 ----
-Limits
+Easy 簡単
 
-- We can only hope to make reliable those things we can understand
-- We can only consider a few things at a time
-- Interwined things must be considered together
-- Complexity undermines understanding
-
-----
-Change
-
-- Do more, Do it differently, Do it better
-- Changes to software require analysis and decisions
-- Your ability to reason about your program is critical
-  - More than tests, types, tools, process
+- Near, at hand 近くに、手元に
+  - on our hand drive, in our tool set, IDE, apt get, gem install 私たちの手のドライブ、ツールセット、IDE、apt get、gem install
+- Near to our understanding/skill set 私たちの理解の近く/スキルセット
+  - familiar おなじみの
+- Near our capabilities 私たちの能力の近く
+- Easy is relative 簡単です相対
+- familiar おなじみの
 
 ----
-Simplicity = Opportunity
+Limits 限界
 
-- Architectural Agility wins
-  - else - push the elephant
-- Design is about pulling things apart
-- Repurpose, substitute, move, combine, extend
+- We can only hope to make reliable those things we can understand われわれは理解できるものを信頼できるものにしたい
+- We can only consider a few things at a time 我々は一度にいくつかのことしか考えない
+- Interwined things must be considered together つながれたものは一緒に考えなければならない
+- Complexity undermines understanding 複雑さが理解を損なう
+
+----
+Change 変化する
+
+- Do more, Do it differently, Do it better もっとやりなさい、それを違うやり方で、より良くする
+- Changes to software require analysis and decisions ソフトウェアの変更は分析と決定を必要とする
+- Your ability to reason about your program is critical あなたのプログラムについてのあなたの能力は重要です
+  - More than tests, types, tools, process テスト、タイプ、ツール、プロセス以上のもの
+
+----
+Simplicity = Opportunity シンプルさ=機会
+
+- Architectural Agility wins Architectural Agilityが勝利
+  - else - push the elephant それ以外は - ゾウを押す
+- Design is about pulling things apart デザインは物事を引き離すことです
+- Repurpose, substitute, move, combine, extend 複製、置換、移動、結合、拡張
 
 ----
 > LISP programmers know the value of everything and the cost of nothing.
