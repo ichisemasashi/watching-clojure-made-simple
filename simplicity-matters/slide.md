@@ -1,24 +1,29 @@
 Simplicity Matters
+
+シンプリシティ事項
+
 Rich Hickey
 
 ----
 > Simplicity is prerequisite for reliability
 
+> シンプリシティは信頼性の前提条件です
 Edsger W. Dijkstra
 
 ----
 Word Origins
+ワード起源
 
-- Simple
-  sim- plex
-  one fold/braid
-  vs complex
+- Simpleシンプル
+  sim- plex 単純な
+  one fold/braid 1つ折り/編組
+  vs complex 複雑な
 
-- Easy
-  ease < aise < adjacens
-  lie near
-  vs hard
-
+- Easy 簡単
+  ease < aise < adjacens  安楽<aise <adjacens
+  lie near 近くに横たわる
+  vs hard ハードと対戦
+    
 ----
 Simple
 
@@ -68,7 +73,7 @@ Simplicity = Opportunity
   - else - push the elephant
 - Design is about pulling things apart
 - Repurpose, substitute, move, combine, extend
-          
+
 ----
 > LISP programmers know the value of everything and the cost of nothing.
 
@@ -153,7 +158,7 @@ Why Care about Order?
 
 ----
 Order in the Wild
- 
+
 |Complex |Simple|
 |Positional arguments |Named arguments or map|
 |Syntax |Data|
