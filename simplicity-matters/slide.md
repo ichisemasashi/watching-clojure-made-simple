@@ -77,45 +77,53 @@ Simplicity = Opportunity シンプルさ=機会
 ----
 > LISP programmers know the value of everything and the cost of nothing.
 
+> LISPプログラマーは、すべての価値と何の費用も知っています。
+
 Alan Perlis
 
 ----
 Programmers know the benefits of everything and the tradeoffs of nothing.
 
+プログラマは、すべてのメリットと何のトレードオフも知っています。
+
 ----
 Programmers vs Programs
 
-- We focus on ourselves
-  - programmer convenience
-  - programmer replaceability
-- Rather than the programs
-  - software quality, correctness
-  - maintenance, change
+プログラマー対プログラム
+
+- We focus on ourselves 我々は自分自身に焦点を当てる
+  - programmer convenience プログラマの利便性
+  - programmer replaceability プログラマの交換可能性
+- Rather than the programs むしろプログラム
+  - software quality, correctness ソフトウェアの品質、正当性
+  - maintenance, change メンテナンス、変更
 - gem install hairball
 
 ----
 Complect
 
-- To interleave, entwine, braid
-- Don’t do it!
-  - Complecting things is the source of complexity
-- Best to avoid in the first place
+- To interleave, entwine, braid インターリーブするには、絡み合わせる
+- Don’t do it! しないでください！
+  - Complecting things is the source of complexity 複雑さの原因となるのは複雑なものです
+- Best to avoid in the first place 最初に避けるのがベスト
 
 ----
-Making Things Easy
+Making Things Easy 簡単にする
 
-- Bring to hand by installing
-  -  getting approved for use
-- Become familiar by learning, trying
-- But mental capability?
-  - not going to move very far
-- Make challenges easy by simplifying them
+- Bring to hand by installing インストールして手に入れる
+  -  getting approved for use 使用が承認される
+- Become familiar by learning, trying 学習、試してみてください。
+- But mental capability? しかし、精神的能力？
+  - not going to move very far 遠くに移動するつもりはない
+- Make challenges easy by simplifying them それらを単純化することによって挑戦を容易にする
 
 ----
 We can be creating the exact same programs out of significantly simpler components
 
+大幅に単純なコンポーネントから正確に同じプログラムを作成することができます
+
 ----
-What’s in your Toolkit?
+What’s in your Toolkit? あなたのツールキットには何がありますか？
 
 |Complexity|Simplicity|
 |State, Objects|Values|
