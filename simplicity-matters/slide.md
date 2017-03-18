@@ -136,36 +136,51 @@ What’s in your Toolkit? あなたのツールキットには何があります
 |Conditionals|Rules|
 |Inconsistency|Consistency|
 
+|複雑さ|シンプルさ|
+|状態、オブジェクト|値|
+|メソッド|関数、名前空間|
+|継承、スイッチ、マッチング|多型アラカルト|
+|構文|データ|
+|命令的なループ、フォールド|機能の設定|
+|俳優|キュー|
+| ORM |宣言的データ操作|
+|条件|ルール|
+|不一致|一貫性|
+
 ----
 ~~Simplicity--the art of maximizing the amount of work not done--is essential.~~
+~~シンプルさ - 作業の量を最大化する技術は不可欠です。~~
 ~~http://agilemanifesto.org/principles.html~~
+
 
 ----
 > Simplicity is not an objective in art, but one achieves simplicity despite one's self by entering into the real sense of things
 
+> シンプリシティは芸術の目的ではありませんが、物事の本物の感覚に入ることによって自分自身にもかかわらずシンプルさを実現します
+
 Constantin Brancusi
 
 ----
-Lists and Order
+Lists and Order リストと注文
 
-- A sequence of things
-- Does order matter?
+- A sequence of things 一連の事
+- Does order matter? 秩序は問題ですか？
   - [first-thing second-thing third-thing ...]
   - [depth width height]
 - set[x y z]
-  - order clearly doesn’t matter
+  - order clearly doesn’t matter 注文は明らかに問題ではない
 
 ----
-Why Care about Order?
+Why Care about Order? なぜ注文について気にしますか？
 
-- Complects each thing with the next
-- Infects usage points
-- Inhibits change
+- Complects each thing with the next それぞれのものを次のものと組み合わせる
+- Infects usage points 利用ポイントに感染する
+- Inhibits change 変更を禁止する
   -  [name email] -> [name phone email]
-- “We don’t do that”
+- “We don’t do that” "私たちはそれをしない"
 
 ----
-Order in the Wild
+Order in the Wild ワイルドでの注文
 
 |Complex |Simple|
 |Positional arguments |Named arguments or map|
@@ -177,14 +192,24 @@ Order in the Wild
 |XML |SON, Clojure literals|
 |...||
 
-----
-Maps (aka hashes), Dammit!
+|コンプレックス|シンプル|
+|位置引数|名前付き引数またはマップ|
+|構文|データ|
+|製品タイプ|関連レコード|
+|命令的プログラム|宣言的プログラム|
+|プロローグ|データログ|
+|コールチェーン|キュー|
+| XML | SON、Clojureのリテラル|
+| ... ||
 
-- First class associative data structures
-- Idiomatic support
-  - literals, accessors, symbolic keys...
-- Generic manipulation
-- Use ‘em
+----
+Maps (aka hashes), Dammit! マップ（別名ハッシュ）、Dammit！
+
+- First class associative data structures ファーストクラス連想データ構造
+- Idiomatic support 慣用的なサポート
+  - literals, accessors, symbolic keys... リテラル、アクセサ、シンボリックキー...
+- Generic manipulation 一般的な操作
+- Use ‘em 'emを使用する
 
 ----
 Information is Simple
