@@ -212,74 +212,76 @@ Maps (aka hashes), Dammit! マップ（別名ハッシュ）、Dammit！
 - Use ‘em 'emを使用する
 
 ----
-Information is Simple
+Information is Simple 情報は簡単です
 
-- Don’t ruin it
-- By hiding it behind a micro-language
-  - i.e. a class with information-specific methods
-  - thwarts generic data composition
-  - ties logic to representation du jour
-- Represent data as data
-
-----
-Encapsulation
-
-- Is for implementation details
-- Information doesn’t have implementation
-  - Unless you added it - why?
-- Information will have representation
-  - have to pick one
+- Don’t ruin it それを台無しにしないでください
+- By hiding it behind a micro-language マイクロ言語の後ろに隠すことで
+  - i.e. a class with information-specific methods 情報固有のメソッドを持つクラス
+  - thwarts generic data composition ジェネリックデータの構成を妨げる
+  - ties logic to representation du jour 表現を論理的に結びつける
+- Represent data as data データをデータとして表現する
 
 ----
-Wrapping Information
+Encapsulation カプセル化
 
-- The information class:
+- Is for implementation details 実装の詳細です
+- Information doesn’t have implementation 情報には実装がありません
+  - Unless you added it - why? それを追加しない限り - なぜですか？
+- Information will have representation 情報は表現を持つ
+  - have to pick one 1つを選択する必要があります
+
+----
+Wrapping Information ラッピング情報
+
+- The information class: 情報クラス：
    - IPersonInfo{
        getName();
        ... verbs and other awfulness ...}
-- A service based upon it:
+- A service based upon it: それに基づくサービス：
   - IService{
       doSomethingUseful(IPersonInfo); ...}
 
 ----
-Can You Move It?
+Can You Move It? あなたはそれを動かすことができますか？
 
-- Litmus test - can you move your subsystems?
-  - out of proc, different language, different thread?
-- Without changing much
-  - Not seeking transparency here
+- Litmus test - can you move your subsystems? あなたのサブシステムを動かすことはできますか？
+  - out of proc, different language, different thread? procから、別の言語、別のスレッド？
 
-----
-Subsystems Must Have
-
-- Well-defined boundaries
-- Abstracted operational interface (verbs)
-- General error handling
-- Take/return data
-  - IPersonInfo - oops!
-- Again, maps (hashes)
+- Without changing much 多くを変えることなく
+  - Not seeking transparency here ここで透明性を求めていない
 
 ----
-Simplicity is a Choice
-
-- Requires vigilance, sensibilities and care
-- Equating simplicity with ease and familiarity is wrong
-  - Develop sensibilities around entanglement
-- Your 'reliability' tools (testing, refactoring, type systems)
-  - don't care if program is simple or not
-- Choose simple constructs
+Subsystems Must Have サブシステムに必要なもの
+- Well-defined boundaries 明確な境界
+- Abstracted operational interface (verbs) 抽象化された操作インタフェース（動詞）
+- General error handling 一般的なエラー処理
+- Take/return data データの取得/返却
+  - IPersonInfo - oops! おっと！
+- Again, maps (hashes) 再び、マップ（ハッシュ）
 
 ----
-Simplicity Matters
+Simplicity is a Choice シンプリシティは選択肢です
 
-- Complexity inhibits understanding
-  - and therefor robustness
-- Simplicity enables change
-  - It is the primary source of true agility
-- Simplicity = Opportunity
-- Go make (simple) things
+- Requires vigilance, sensibilities and care 警戒心、感性、ケアが必要
+- Equating simplicity with ease and familiarity is wrong 簡単さと親しみやすさを同等にすることは間違っています
+  - Develop sensibilities around entanglement エンタングルメントの感性を養う
+- Your 'reliability' tools (testing, refactoring, type systems) あなたの信頼性ツール（テスト、リファクタリング、タイプシステム）
+  - don't care if program is simple or not プログラムが単純かどうかは気にしない
+- Choose simple constructs 単純な構造を選択する
+
+----
+Simplicity Matters シンプリシティ事項
+
+- Complexity inhibits understanding 複雑さが理解を阻害する
+  - and therefor robustness したがって丈夫さ
+- Simplicity enables change シンプリシティによって変更が可能
+  - It is the primary source of true agility 真の敏捷性の主要な源泉です
+- Simplicity = Opportunity シンプルさ=機会
+- Go make (simple) things 行く（単純な）ものを作る
 
 ----
 > Simplicity is the ultimate sophistication.
+
+シンプルさは究極の洗練です。
 
 Leonardo da Vinci
