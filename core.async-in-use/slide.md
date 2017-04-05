@@ -85,8 +85,6 @@ Batching operation
 Problem: count is O(n) when used on a lazy seq
 (I came to Clojure to avoid thinking about this)
 
-Batching operation
-
 ```
 (defn batch [in max-size]
   (let [out (chan 1)]
@@ -101,3 +99,91 @@ Batching operation
 ```
 
 ----
+Batching operation
+
+Problem: How do I supply options for this output channel?
+
+```
+(defn batch [in max-size]
+  (let [out (chan 1)] ;; <-- No way for user to change
+    (go
+      (loop [acc nil]
+        (when-some [v (<! in)]
+          (let [new-acc (concat acc v)]
+            (if (>= (count new-acc) max-size)
+              (when (>! out new-acc)
+                (recur nil))
+              (recur new-acc))))))))
+```
+
+----
+Batching operation
+
+Problem: No error handling!
+```
+(defn batch [in max-size]
+  (let [out (chan 1)]
+    (go
+      (loop [acc nil]
+        (when-some [v (<! in)] ;; what if we get an int?
+          (let [new-acc (concat acc v)]
+            (if (>= (count new-acc) max-size)
+              (when (>! out new-acc)
+                (recur nil))
+              (recur new-acc))))))))
+```
+
+----
+Batching operation
+
+Who caught the last flaw?
+
+```
+(defn batch [in max-size]
+  (let [out (chan 1)]
+    (go
+      (loop [acc nil]
+        (when-some [v (<! in)]
+          (let [new-acc (concat acc v)]
+            (if (>= (count new-acc) max-size)
+              (when (>! out new-acc)
+                (recur nil))
+              (recur new-acc))))))))
+```
+
+----
+Batching operation
+
+Problem: I don't return the right channel!
+
+```
+(defn batch [in max-size]
+  (let [out (chan 1)] ;; <-- never returned
+    (go
+      (loop [acc nil]
+        (when-some [v (<! in)]
+          (let [new-acc (concat acc v)]
+            (if (>= (count new-acc) max-size)
+              (when (>! out new-acc)
+                (recur nil))
+              (recur new-acc))))))))
+```
+
+----
+Thoughts:
+
+1. What we have is imparative side-effecti(y) code
+2. This doesn't seem "functional" at all
+3. Why do I have to think at this low a level?
+4. Why not work with something more declarative?
+
+----
+Why not Transducers?
+
+```
+(defn batch [in max-size]
+  (let [out (chan 1)
+        xf (comp cat (partition-all max-size))]
+    (pipeline 1 out xf in)
+    out))
+```
