@@ -236,3 +236,55 @@ Thoughts
 We need better solutions and abstractions
 
 ----
+Patterns and ideas for reducing the complexity of async code
+
+---
+One weird trick that will drasticly reduce the complexity of your code ...
+
+----
+Don't go async! (Unless you need it)
+
+----
+Use transducer enabled async callbacks:
+```
+; Simulate an async page request
+(defn get-page [idx k]
+  (println "Fetching Page" idx)
+  ;; Simulate network callback
+  (Thread/sleep 100)
+  (future
+    ;; Dispatch on a different Thread
+    (k (vec (range (* idx 5) (* (inc idx) 5))))))
+```
+
+----
+Wrap the async function:
+
+```
+(defn pages [xf rf k]
+  (let [f (xf rf)
+        start (fn process-page [idx acc page]
+                ;; Call the function with the acc and page
+                (let [result (f acc page)]
+                  (if (reduced? result)
+                    (k @result)
+                    ;; Continue with the next page
+                    (get-page (inc idx)
+                              (partial process-page
+                                       (inc idx)
+                                       result)))))]
+      (get-page 0 (partial start 0 (f)))))
+```
+
+----
+Usage:
+
+```
+(def xform (comp cat
+                 (filter #(> % 10))
+                 (take 10)))
+(pages xform
+       conj
+       (fn [result]
+         (println "Finished with " result)))
+```
