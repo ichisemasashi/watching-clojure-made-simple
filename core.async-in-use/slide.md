@@ -187,3 +187,52 @@ Why not Transducers?
     (pipeline 1 out xf in)
     out))
 ```
+
+----
+Or:
+
+```
+(defn batch [max-size]
+  (chan 1 (comp cat (partition-all max-size))))
+```
+
+----
+Or:
+
+```
+(defn batch-xf [max-size]
+  (comp cat (partition-all max-size)))
+```
+
+----
+Example 2
+
+```
+(defn get-value [key callback] ...)
+
+(defn value-for [key]
+  (let [c (chan)]
+    (get-value key #(async/put! c %))
+    c))
+
+(defn sum-values [keys]
+  (go (loop [acc 0, [h & t] keys]
+        (if h
+          (recur (+ acc (<! (value-for h))) t)
+          acc))))
+
+(<!! (sum-values "a" "b" "c"))
+```
+
+----
+Thoughts
+
+- In most VMs, async code pollutes the return type (true in C#, Python, JS, Clojure, etc.)
+- Each of these places has problems with error handling, exceptions, etc.
+- Exceptions as values would require us to check the return type (or write channel ops that throw and then wrap everything in a try)
+- IO...IO everywhere
+
+----
+We need better solutions and abstractions
+
+----
