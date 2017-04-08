@@ -288,3 +288,72 @@ Usage:
        (fn [result]
          (println "Finished with " result)))
 ```
+
+-----
+Thoughts on this pattern:
+
+1. Works with any language (no core.async or other transforms required)
+1. Removes the "implied buffer of 1" per process, allowing for more control over number of pages requested
+1. Could be expanded to pass errors as values
+1. Could be expanded to pre-fetch pages
+1. Easily extended to core.async channels
+
+----
+Om.Next Model
+
+```
+(defi AutoCompleter
+  static om/IQueryParams
+  (params [_]
+    {:query ""})
+
+  static om/IQuery
+  (query [_]
+    '[(:search/results {:query ?query})])
+
+  Object
+  (render [this]
+    (let [{:keys [search/results]} (om/props this)]
+      (dom/div nil
+        (dom/h2 nil "Autocompleter")
+        (cond->
+          [(search-field this
+            (:query (om/get-params this)))]
+          (not (empty? results))
+            (conj (result-list results)))))))
+```
+
+----
+Thoughts on this pattern
+
+- No async code to be seen (handled by the framework)
+- Required data is explicit (allows for bulk loading)
+- Code is very tetstable
+- Combine the params definitions with spec for even more power
+
+
+---
+Reified Stack
+
+----
+Example: Pedestal Interceptors
+
+```
+(defrecord Interceptor [enter exit on-error])
+
+(def pipeline [parse-params encode-body handler])
+
+(defn parse-params-enter
+  [{:keys [params-string] :as ctx}]
+  (assoc ctx :params (split-params params-string)))
+
+(defn encode-body-exit
+  [{:keys [body] :as ctx}]
+  (assoc ctx :body-string (json/encode body)))
+
+(defn handler-enter [{:keys [params db-conn] :as ctx}]
+  (go
+    (assoc ctx :body (<! (get-record (:id params))))))
+```
+
+----
