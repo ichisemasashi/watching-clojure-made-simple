@@ -328,7 +328,7 @@ Thoughts on this pattern
 
 - No async code to be seen (handled by the framework)
 - Required data is explicit (allows for bulk loading)
-- Code is very tetstable
+- Code is very testable
 - Combine the params definitions with spec for even more power
 
 
@@ -357,3 +357,106 @@ Example: Pedestal Interceptors
 ```
 
 ----
+Reified Stack
+
+- We can modify the stack while it's being executed (if we store the stack inside the context)
+- Non-async interceptors are kept Non-async
+- We could execute parts of the stack multiple times (for websockets/SSE this might make sense)
+- Applies to message pipeline (could integrate with (n)ack features of message queues)
+
+----
+Dataflow (and FRP)
+
+- Nodes connected via communication channels
+- Each node takes and emits from one or more inputs/outputus
+- Each node consists of a function that computes outputs based on inputs
+
+----
+Dataflow (and FRP)
+
+```
+(defn emit [state port value]
+  (update-in state [:outputs port] conj values))
+
+(defn filter-fn [pred]
+  (fn [state msg]
+    (if (pred msg)
+        (emit state :out msg)
+        state)))
+
+(def filter-node {:inputs {:in (filter-fn pos?)}
+                  :outputs {:out {}}})
+```
+
+----
+Dataflow (and FRP)
+
+```
+(defn split-fn [key-fn state msg]
+  (emit state (key-fn msg) msg))
+
+(defn distinct-fn [state msg]
+  (if (contains? (:seen state) msg)
+      state
+      (-> (emit state :out msg)
+          (update-in state :seen (fnil conj #{}) msg))))
+```
+
+----
+Dataflow and (FRP)
+
+```
+;; Leverage Transducers
+(defn transducer-fn [xducer]
+  (let [rf (fn [state msg]
+             (emit state :out msg))]
+             (xducer rf)))
+
+(def filter-node {:inputs {:in (transducer-fn filter pos?)}}
+                  :outputs {:out []})
+```
+
+-----
+Dataflow (and FRP)
+
+```
+(-> (graph)
+    (add-node :split (split-node #(if (odd? %) :odd :even)))
+    (add-node :square (transducer-node (map #(* % %))))
+    (connect :split :even :square :in)
+    (connect :split :odd :graph-exit)
+    (connect :square :out :graph-exit)
+    (ingest-all (range 1 4)))
+```
+
+----
+Dataflow (and FRP)
+
+Thoughts:
+- Nodes are easily testable (functionally pure)
+- Async code is removed from the user interface
+- Connections are explicit
+- Could use core.async channels as connections
+
+-----
+Rant on Actors
+
+---
+Discussion of Actors
+
+Looks like the Dataflow example except:
+- Connections are implicit
+- Many (most) actor systems allow for sending messages inside user code
+- Opaque state hidden in loop local
+- One input mailbox requires senders to tag messages with extra info.
+
+-----
+Pattern in the Patterns?
+
+- Keep userspace code pure
+- Move the complexity of async out of the user space
+- Make dependencies explict
+- Leverage this for easier testing
+- Use Core.Async to enable cleaner abstractions, not as an end in itself.
+
+-----
