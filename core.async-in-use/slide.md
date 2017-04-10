@@ -458,5 +458,3 @@ Pattern in the Patterns?
 - Make dependencies explict
 - Leverage this for easier testing
 - Use Core.Async to enable cleaner abstractions, not as an end in itself.
-
------
