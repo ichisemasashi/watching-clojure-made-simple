@@ -93,3 +93,63 @@ Explicit Locks
   - Synchronized handles single-method jobs only
 
 ----
+Single Lock Problems
+
+- Can't enforce coordination via language/code
+  - This is not a small problem
+- Even when correct, can cause throughput bottleneck on multi-CPU machines
+  - Your app is running on a multi-CPU machine
+  - Readers block readers
+
+----
+Enhancing Read Parallelism
+
+- Multi-reader/single-writer locks
+  - Readers don't block each other
+  - One writer at a time
+  - Writers wait for reader(s)
+
+----
+Copy On Write Collections
+
+- Reads get a snapshot
+- Lock-free reading
+- Atomic writes
+- Internally, copy the representation and swap it
+  - Writes can be expensive (copying)
+- Multi-step writes still require locks
+
+----
+Persistent Data Structures
+
+- Immutable, + old version of the collection is still available after 'changes'
+- Collection maintains its performance guarantees for most operations
+  - Therefore new versions are not full copies
+- All Clojure data structures persistent
+  - Hash map and vector both based upon array mapped hash tries (Bagwell)
+  - Sorted map is red-black tree
+
+---
+![Bit-partitioned hash tries](figure001.png)
+
+----
+![Path Copying](figure002.png)
+
+----
+Structural Sharing
+
+- Key to efficient 'copies' and therefore persistence
+- Everything is final so no chance of interference
+- Thread safe
+- Iteration safe
+
+----
+Multi-component change
+
+- Perceding was the easy part
+- Many logical activities involve multiple data structures/multiple steps
+- Two locking options
+  - Coarse granularity locks
+  - Fine granularity locks
+
+----
