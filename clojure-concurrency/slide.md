@@ -153,3 +153,121 @@ Multi-component change
   - Fine granularity locks
 
 ----
+Coarse Granularity Locking
+
+- Create external Lock representing a set of data structures
+- Clients must obtail a lock to maiipulate any of the structures
+- Each multi-part logical operation requires only one lock
+
+----
+Coarse Granularity Locking
+
+x Safest
+- Can be confusing as to what constitutes the set(s), what needs to be locked
+  - X needs a/b/c, Y needs b/c/d
+- Least throughput
+  - Possible needless blocking
+- Should read lock?
+
+----
+Fine Granularity Locking
+
+- Use locks on data structures themselves
+- Clients must obtain a lock on each of the structures
+- A multi-part logical operation may require several locks
+
+----
+Fine Granularity Locking
+
+- Dangerous
+- Locking order is critical
+  - X locks a/b, Y locks b/a - deadlock possible
+  - Very difficult to enforce locking order
+- Best throughput
+  - Minimal blocking
+- Should reads lock?
+---
+Concurrency Methods
+
+- Conventional way:
+  - Direct references to mutable objects
+  - Lock and pray (manual/convention)
+- Clojure way:
+  - Indirect references to immutable persistent data structures
+  - Concurrency semantics for references
+    - Automatic/enforced
+    - No locks!
+
+----
+Clojure References
+
+- The only things that mutate are references themselves, in a controlled way
+- 3 types of mutable references
+  - Vars - Isolate changes within threads
+  - Refs - Share synchronous coordinated changes between threads
+  - Agents - Share asynchronous independent changes between threads
+
+----
+Vars
+
+- Like Common Lisp's special vars
+  - dynamic scope
+  - stack discipline
+- Shared root binding established by def
+  - root can be unbound
+- Can be changed (via set!) but only if first thread-locally bound using binding
+- Functions stored in vars, so they too can be dynamically rebound
+  - context/aspect-like idioms
+
+----
+Refs and Transactions
+
+- Software transactional memory system (STM)
+- Refs can only be changed within a transaction
+- All changes are Atomic and Isolated
+  - Every change to Refs made within a transaction occurs or none do
+  - No transaction sees the effects of any other transaction while it is running
+- Transactions are speculative
+  - Will be retried automatically if conflict
+  - Must avoid side-effects!
+
+----
+The Clojure STM
+
+- Surround code with (dosync ...)
+- Uses Multiversion Concurrency Control (MVCC)
+- All reads of Refs will see a consistent snapshot of the 'Ref world' as of the starting point of the transaction, + any changes it has made.
+- All changes made to Refs during a transaction will appear to occur at a single point in the timeline.
+- Readers never block writers/readers, writers never block readers, supports commute
+
+----
+Agents
+
+- Manage independent state
+- State changes through actions, which are ordinary functions (state => new-state)
+- Actions are dispatched using send or send-off, which return immediately
+- Actions occur asynchronously on thread-pool threads
+- Only one action per agent happens at a time
+
+----
+Agents
+
+- Agent state always accessible, via deref/@, but may not reflect all actions
+- Can coordinate with actions using await
+- Any dispatches made during an action are held until after the state of the agent has changed
+- Agents coordinate with transactions - any dispatches made during a transaction are held until it commits
+- Agents are not Actors (Erlang/Scala)
+
+----
+Walkthrough
+
+- Ant colony simulation
+- World populated with food and ants
+- Ants find food, bring home, drop pheromones
+- Sense pheromones, food, home
+- Ants act independently, on multiple real threads
+- Model pheromone evaporation
+- Animated GUI
+- < 250 lines of Clojure
+
+----
