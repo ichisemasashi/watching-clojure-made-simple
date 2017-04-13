@@ -42,36 +42,36 @@ Clojure Fundamentals
 ----
 Clojure Features
 
-- Dynamic development
+- Dynamic development  ダイナミックな開発
   - REPL, reader, on-the-fly compilation to JVM bytecode
-- Primitives - numbers, including arbitary-precision integers & ratios, characters, strings, symbols, keywords, regexes
-- Aggregates - lists, maps, sets, vectors
-  - read-able, persistent, immutable, extensible
-- Abstract sequences + library
-- Metadata
-- First-class functions (fn), closures
-- Recursive functional looping
-- Destructuring binding in let/fn/loop
-- List comprehensions (for)
-- Macros
-- Multimethods
-- Concurrency support
-- Java interop
-  - Call methods, access fields, arrays
-  - Proxy interfaces/classes
-  - Sequence functions extended to Java strings, arrays, Collections
-  - Clojure data structures implement Collection/Callable/Iterable/Comparable etc where appropriate
-- Namespaces, zippers, XML and more!
+- Primitives - numbers, including arbitary-precision integers & ratios, characters, strings, symbols, keywords, regexes  プリミティブ - 任意精度の整数と比率、文字、文字列、シンボル、キーワード、正規表現などの数値
+- Aggregates - lists, maps, sets, vectors  集計 - リスト、マップ、セット、ベクトル
+  - read-able, persistent, immutable, extensible  読み取り可能、永続的、不変、拡張可能
+- Abstract sequences + library  抽象シーケンス+ライブラリ
+- Metadata   メタデータ
+- First-class functions (fn), closures  ファーストクラス関数（fn）、クロージャ
+- Recursive functional looping  再帰的な機能のループ
+- Destructuring binding in let/fn/loop  let / fn / loopでの結合の破壊
+- List comprehensions (for)  リスト内包（for）
+- Macros  マクロ
+- Multimethods  マルチメソッド
+- Concurrency support  並行処理のサポート
+- Java interop  Java相互運用性
+  - Call methods, access fields, arrays  メソッドの呼び出し、フィールドへのアクセス、配列の呼び出し
+  - Proxy interfaces/classes  プロキシインタフェース/クラス
+  - Sequence functions extended to Java strings, arrays, Collections  シーケンス関数をJava文字列、配列、コレクションに拡張
+  - Clojure data structures implement Collection/Callable/Iterable/Comparable etc where appropriate  Clojureデータ構造は、必要に応じてCollection / Callable / Iterable / Comparableなどを実装します
+- Namespaces, zippers, XML and more!  名前空間、ジッパー、XMLなど
 
 ----
-State - You're doing it wrong
+State - You're doing it wrong   - それは間違っている
 
-- Mutable objects are the new spaghetti code
-  - Hard to understand, test, reason about
-  - Concurrency disaster
-  - Terrible default architecture (Java/C#/Python/Ruby/Groovy/CLOS...)
-- Doing the right thing is very difficult
-  - Languages matter!
+- Mutable objects are the new spaghetti code  可変オブジェクトは新しいスパゲッティコードです
+  - Hard to understand, test, reason about  理解するのが難しい、テストする、理由がある
+  - Concurrency disaster  並行性障害
+  - Terrible default architecture (Java/C#/Python/Ruby/Groovy/CLOS...)  ひどいデフォルトアーキテクチャ（Java / C＃/ Python / Ruby / Groovy / CLOS ...）
+- Doing the right thing is very difficult  正しいことをすることは非常に難しい
+  - Languages matter!  言語は重要です！
 
 ----
 Concurrency
