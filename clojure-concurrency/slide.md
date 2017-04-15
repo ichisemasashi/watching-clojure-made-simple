@@ -75,13 +75,14 @@ State - You're doing it wrong   - それは間違っている
 
 ----
 Concurrency
+同時実行性
 
-- Interleaved/simultaneous execution
-- Must avoid seeing/yielding inconsistent data
-- The more components there are to the data, the more difficult to keep consistent
-- The more steps in a logical change, the more difficult to keep consistent
-- Opportunities for automatic parallelism
-  - Emphasis here on coordination
+- Interleaved/simultaneous execution インターリーブ/同時実行
+- Must avoid seeing/yielding inconsistent data 一貫性のないデータの表示/拒否を避けなければならない
+- The more components there are to the data, the more difficult to keep consistent  データに対するコンポーネントが多くなればなるほど、一貫性を維持することが難しくなります
+- The more steps in a logical change, the more difficult to keep consistent  論理的な変更のステップが増えるほど、一貫性を維持することが難しくなります
+- Opportunities for automatic parallelism  自動並列処理の機会
+  - Emphasis here on coordination  ここでのコーディネーションの強調
 
 ----
 Explicit Locks
