@@ -85,13 +85,13 @@ Concurrency
   - Emphasis here on coordination  ここでのコーディネーションの強調
 
 ----
-Explicit Locks
+Explicit Locks  明示的なロック
 
-- lock/synchronized (coll){...}
-- Only one thread can have the lock, others  block
-- Requires coordination
-  - All code that performs non-atomic access to coll must put that in a lock block
-  - Synchronized handles single-method jobs only
+- lock/synchronized (coll){...}  ロック/同期
+- Only one thread can have the lock, others  block  1つのスレッドのみがロックを持つことができ、他のスレッドはブロックすることができます
+- Requires coordination  調整が必要
+  - All code that performs non-atomic access to coll must put that in a lock block  collへの非アトミックアクセスを実行するすべてのコードは、ロックブロックにそのコードを配置する必要があります
+  - Synchronized handles single-method jobs only  同期は単一メソッドジョブのみを処理します
 
 ----
 Single Lock Problems
