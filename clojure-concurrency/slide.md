@@ -94,21 +94,21 @@ Explicit Locks  明示的なロック
   - Synchronized handles single-method jobs only  同期は単一メソッドジョブのみを処理します
 
 ----
-Single Lock Problems
+Single Lock Problems  単一ロックの問題
 
-- Can't enforce coordination via language/code
-  - This is not a small problem
-- Even when correct, can cause throughput bottleneck on multi-CPU machines
-  - Your app is running on a multi-CPU machine
-  - Readers block readers
+- Can't enforce coordination via language/code  言語/コードによる調整を強制できません
+  - This is not a small problem  これは小さな問題ではない
+- Even when correct, can cause throughput bottleneck on multi-CPU machines  たとえ正しい場合でも、マルチCPUマシンでスループットのボトルネックが発生する可能性があります
+  - Your app is running on a multi-CPU machine  あなたのアプリはマルチCPUマシンで動作しています
+  - Readers block readers  読者は読者をブロックする
 
 ----
-Enhancing Read Parallelism
+Enhancing Read Parallelism  読取り並列性の向上
 
-- Multi-reader/single-writer locks
-  - Readers don't block each other
-  - One writer at a time
-  - Writers wait for reader(s)
+- Multi-reader/single-writer locks マルチリーダ/シングルライタロック
+  - Readers don't block each other  読者はお互いをブロックしない
+  - One writer at a time  一度に1人の作家
+  - Writers wait for reader(s)  作家は読者を待っている
 
 ----
 Copy On Write Collections
