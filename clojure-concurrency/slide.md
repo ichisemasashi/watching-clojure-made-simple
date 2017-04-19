@@ -111,24 +111,24 @@ Enhancing Read Parallelism  読取り並列性の向上
   - Writers wait for reader(s)  作家は読者を待っている
 
 ----
-Copy On Write Collections
+Copy On Write Collections  書込みコピーのコピー
 
-- Reads get a snapshot
-- Lock-free reading
-- Atomic writes
-- Internally, copy the representation and swap it
-  - Writes can be expensive (copying)
-- Multi-step writes still require locks
+- Reads get a snapshot  スナップショットを読み込みます
+- Lock-free reading  ロックフリーの読書
+- Atomic writes  原子書き込み
+- Internally, copy the representation and swap it  内部的には、表現をコピーしてスワップする
+  - Writes can be expensive (copying) 書き込みは高価（コピー）
+- Multi-step writes still require locks  マルチステップ書き込みにはまだロックが必要です
 
 ----
-Persistent Data Structures
+Persistent Data Structures  永続的なデータ構造
 
-- Immutable, + old version of the collection is still available after 'changes'
-- Collection maintains its performance guarantees for most operations
-  - Therefore new versions are not full copies
-- All Clojure data structures persistent
-  - Hash map and vector both based upon array mapped hash tries (Bagwell)
-  - Sorted map is red-black tree
+- Immutable, + old version of the collection is still available after 'changes'  コレクションの変更不可能な古いバージョンは、 '変更'の後も引き続き使用できます
+- Collection maintains its performance guarantees for most operations  コレクションは、ほとんどの操作でパフォーマンスの保証を維持します
+  - Therefore new versions are not full copies  したがって、新しいバージョンはフルコピーではありません
+- All Clojure data structures persistent  すべてのClojureデータ構造は永続的です
+  - Hash map and vector both based upon array mapped hash tries (Bagwell)  ハッシュマップとベクトルの両方は、配列マップハッシュトライ（Bagwell）に基づいています。
+  - Sorted map is red-black tree  ソートマップは赤 - 黒のツリーです
 
 ---
 ![Bit-partitioned hash tries](figure001.png)
@@ -137,38 +137,38 @@ Persistent Data Structures
 ![Path Copying](figure002.png)
 
 ----
-Structural Sharing
+Structural Sharing  構造的共有
 
-- Key to efficient 'copies' and therefore persistence
-- Everything is final so no chance of interference
-- Thread safe
-- Iteration safe
-
-----
-Multi-component change
-
-- Perceding was the easy part
-- Many logical activities involve multiple data structures/multiple steps
-- Two locking options
-  - Coarse granularity locks
-  - Fine granularity locks
+- Key to efficient 'copies' and therefore persistence  効率的な「コピー」とそのための永続性の鍵
+- Everything is final so no chance of interference  すべてが最終的なので、干渉の可能性はない
+- Thread safe  スレッドセーフ
+- Iteration safe  反復安全
 
 ----
-Coarse Granularity Locking
+Multi-component change  複数コンポーネントの変更
 
-- Create external Lock representing a set of data structures
-- Clients must obtail a lock to maiipulate any of the structures
-- Each multi-part logical operation requires only one lock
+- Perceding was the easy part  先行するのは簡単な部分だった
+- Many logical activities involve multiple data structures/multiple steps  多くの論理的活動は、複数のデータ構造/複数のステップ
+- Two locking options  2つのロックオプション
+  - Coarse granularity locks  粗粒度ロック
+  - Fine granularity locks  ファイン粒度ロック
 
 ----
-Coarse Granularity Locking
+Coarse Granularity Locking  粗粒度ロック
 
-x Safest
-- Can be confusing as to what constitutes the set(s), what needs to be locked
-  - X needs a/b/c, Y needs b/c/d
-- Least throughput
-  - Possible needless blocking
-- Should read lock?
+- Create external Lock representing a set of data structures  一連のデータ構造を表す外部ロックを作成する
+- Clients must obtail a lock to maiipulate any of the structures  クライアントは、構造体のいずれかを操作するためにロックを取得する必要があります
+- Each multi-part logical operation requires only one lock  各マルチパート論理演算に必要なロックは1つだけです
+
+----
+Coarse Granularity Locking  粗粒度ロック
+
+x Safest  最も安全な
+- Can be confusing as to what constitutes the set(s), what needs to be locked  セットを構成するもの、ロックする必要があるものを混乱させる可能性があります
+  - X needs a/b/c, Y needs b/c/d  Xはa / b / cを必要とし、Yはb / c / dを必要とする
+- Least throughput  最低スループット
+  - Possible needless blocking  可能性のある不要なブロック
+- Should read lock?  ロックを読みますか？
 
 ----
 Fine Granularity Locking
