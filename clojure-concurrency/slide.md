@@ -171,11 +171,11 @@ x Safest  最も安全な
 - Should read lock?  ロックを読みますか？
 
 ----
-Fine Granularity Locking
+Fine Granularity Locking  ファイン粒度ロック
 
-- Use locks on data structures themselves
-- Clients must obtain a lock on each of the structures
-- A multi-part logical operation may require several locks
+- Use locks on data structures themselves  データ構造自体にロックを使用する
+- Clients must obtain a lock on each of the structures  クライアントは、各構造のロックを取得する必要があります
+- A multi-part logical operation may require several locks  複数パートの論理操作では、複数のロックが必要になることがあります
 
 ----
 Fine Granularity Locking
