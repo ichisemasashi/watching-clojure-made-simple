@@ -178,15 +178,15 @@ Fine Granularity Locking  ファイン粒度ロック
 - A multi-part logical operation may require several locks  複数パートの論理操作では、複数のロックが必要になることがあります
 
 ----
-Fine Granularity Locking
+Fine Granularity Locking  ファイン粒度ロック
 
-- Dangerous
-- Locking order is critical
-  - X locks a/b, Y locks b/a - deadlock possible
-  - Very difficult to enforce locking order
-- Best throughput
-  - Minimal blocking
-- Should reads lock?
+- Dangerous  危険な
+- Locking order is critical  ロックの順序は重要です
+  - X locks a/b, Y locks b/a - deadlock possible  Xロックa / b、Yロックb / a - デッドロック可能
+  - Very difficult to enforce locking order  ロック命令を実行するのは非常に難しい
+- Best throughput 最高のスループット
+  - Minimal blocking  最小限のブロック
+- Should reads lock?  読み込みをロックする必要がありますか？
 ---
 Concurrency Methods
 
