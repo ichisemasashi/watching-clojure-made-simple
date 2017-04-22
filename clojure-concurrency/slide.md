@@ -188,25 +188,25 @@ Fine Granularity Locking  ファイン粒度ロック
   - Minimal blocking  最小限のブロック
 - Should reads lock?  読み込みをロックする必要がありますか？
 ---
-Concurrency Methods
+Concurrency Methods  並行処理メソッド
 
-- Conventional way:
-  - Direct references to mutable objects
-  - Lock and pray (manual/convention)
-- Clojure way:
-  - Indirect references to immutable persistent data structures
-  - Concurrency semantics for references
-    - Automatic/enforced
-    - No locks!
+- Conventional way:  従来の方法：
+  - Direct references to mutable objects  可変オブジェクトへの直接参照
+  - Lock and pray (manual/convention)  ロックと祈り（手動/大会）
+- Clojure way:  Clojure方法：
+  - Indirect references to immutable persistent data structures 不変永続データ構造への間接参照
+  - Concurrency semantics for references 参照の同時実行セマンティクス
+    - Automatic/enforced 自動/強制
+    - No locks! ロックなし！
 
 ----
-Clojure References
+Clojure References Clojure参考文献
 
-- The only things that mutate are references themselves, in a controlled way
-- 3 types of mutable references
-  - Vars - Isolate changes within threads
-  - Refs - Share synchronous coordinated changes between threads
-  - Agents - Share asynchronous independent changes between threads
+- The only things that mutate are references themselves, in a controlled way 突然変異する唯一の事柄は、制御された方法で参照自体です
+- 3 types of mutable references 3種類の可変参照
+  - Vars - Isolate changes within threads スレッド内の変更を分離する
+  - Refs - Share synchronous coordinated changes between threads 同期された調整済みの変更をスレッド間で共有する
+  - Agents - Share asynchronous independent changes between threads スレッド間の非同期の独立した変更を共有する
 
 ----
 Vars
