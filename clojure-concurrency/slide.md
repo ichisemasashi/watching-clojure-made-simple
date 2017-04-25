@@ -211,14 +211,14 @@ Clojure References Clojure参考文献
 ----
 Vars
 
-- Like Common Lisp's special vars
-  - dynamic scope
-  - stack discipline
-- Shared root binding established by def
-  - root can be unbound
-- Can be changed (via set!) but only if first thread-locally bound using binding
-- Functions stored in vars, so they too can be dynamically rebound
-  - context/aspect-like idioms
+- Like Common Lisp's special vars Common Lispの特別なvarsのように
+  - dynamic scope  ダイナミックスコープ
+  - stack discipline  スタック規律
+- Shared root binding established by def  defによって確立された共有ルートバインディング
+  - root can be unbound  ルートはアンバインドすることができます
+- Can be changed (via set!) but only if first thread-locally bound using binding  （バインドを使用して最初にスレッドローカルにバインドされている場合のみ）
+- Functions stored in vars, so they too can be dynamically rebound  varsに格納されている関数なので、動的にリバウンドすることもできます
+  - context/aspect-like idioms コンテキスト/アスペクトのようなイディオム
 
 ----
 Refs and Transactions
