@@ -223,14 +223,14 @@ Vars
 ----
 Refs and Transactions
 
-- Software transactional memory system (STM)
-- Refs can only be changed within a transaction
-- All changes are Atomic and Isolated
-  - Every change to Refs made within a transaction occurs or none do
-  - No transaction sees the effects of any other transaction while it is running
-- Transactions are speculative
-  - Will be retried automatically if conflict
-  - Must avoid side-effects!
+- Software transactional memory system (STM) ソフトウェアトランザクションメモリシステム（STM）
+- Refs can only be changed within a transaction  参照はトランザクション内でのみ変更することができます
+- All changes are Atomic and Isolated  すべての変更は原子と孤立です
+  - Every change to Refs made within a transaction occurs or none do  トランザクション内で行われたRefへのすべての変更が発生するかどうか
+  - No transaction sees the effects of any other transaction while it is running  実行中のトランザクションは、他のトランザクションの影響を認識しません
+- Transactions are speculative  トランザクションは投機的です
+  - Will be retried automatically if conflict  競合が発生すると自動的に再試行されます
+  - Must avoid side-effects!  副作用を避けなければならない！
 
 ----
 The Clojure STM
