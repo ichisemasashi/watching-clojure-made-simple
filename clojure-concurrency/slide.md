@@ -235,11 +235,11 @@ Refs and Transactions
 ----
 The Clojure STM
 
-- Surround code with (dosync ...)
-- Uses Multiversion Concurrency Control (MVCC)
-- All reads of Refs will see a consistent snapshot of the 'Ref world' as of the starting point of the transaction, + any changes it has made.
-- All changes made to Refs during a transaction will appear to occur at a single point in the timeline.
-- Readers never block writers/readers, writers never block readers, supports commute
+- Surround code with (dosync ...)  
+- Uses Multiversion Concurrency Control (MVCC)  マルチバージョン同時実行制御（MVCC）を使用
+- All reads of Refs will see a consistent snapshot of the 'Ref world' as of the starting point of the transaction, + any changes it has made.Refsのすべての読み取りには、トランザクションの開始点として+ 'Ref World'の一貫したスナップショットが表示されます。
+- All changes made to Refs during a transaction will appear to occur at a single point in the timeline.  トランザクション中にRefsに加えられたすべての変更は、タイムライン内の単一のポイントで発生するように見えます。
+- Readers never block writers/readers, writers never block readers, supports commute  読者は決してライター/読者をブロックせず、作家は決して読者をブロックせず、通勤をサポートします
 
 ----
 Agents
