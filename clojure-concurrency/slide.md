@@ -244,11 +244,11 @@ The Clojure STM
 ----
 Agents
 
-- Manage independent state
-- State changes through actions, which are ordinary functions (state => new-state)
-- Actions are dispatched using send or send-off, which return immediately
-- Actions occur asynchronously on thread-pool threads
-- Only one action per agent happens at a time
+- Manage independent state  独立した状態を管理する
+- State changes through actions, which are ordinary functions (state => new-state)  通常の機能であるアクションによる状態の変化
+- Actions are dispatched using send or send-off, which return immediately  アクションはsendまたはsend-offを使用して送出され、即座に戻ります。
+- Actions occur asynchronously on thread-pool threads  スレッドプールスレッドでアクションが非同期に発生する
+- Only one action per agent happens at a time  一度に1エージェントあたり1つのアクションしか発生しません
 
 ----
 Agents
