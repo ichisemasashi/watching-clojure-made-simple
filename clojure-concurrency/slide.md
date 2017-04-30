@@ -253,10 +253,10 @@ Agents
 ----
 Agents
 
-- Agent state always accessible, via deref/@, but may not reflect all actions
-- Can coordinate with actions using await
-- Any dispatches made during an action are held until after the state of the agent has changed
-- Agents coordinate with transactions - any dispatches made during a transaction are held until it commits
+- Agent state always accessible, via deref/@, but may not reflect all actions  エージェントの状態は常にderef / @によってアクセス可能ですが、すべてのアクションを反映していない可能性があります
+- Can coordinate with actions using await  awaitを使用してアクションを調整できます
+- Any dispatches made during an action are held until after the state of the agent has changed  アクション中に行われたディスパッチは、エージェントの状態が変更されるまで保持されます
+- Agents coordinate with transactions - any dispatches made during a transaction are held until it commits  エージェントは取引と調整を行います。取引中に行われたディスパッチは、コミットするまで保持されます
 - Agents are not Actors (Erlang/Scala)
 
 ----
