@@ -260,15 +260,15 @@ Agents
 - Agents are not Actors (Erlang/Scala)
 
 ----
-Walkthrough
+Walkthrough  
 
 - Ant colony simulation
-- World populated with food and ants
-- Ants find food, bring home, drop pheromones
-- Sense pheromones, food, home
-- Ants act independently, on multiple real threads
-- Model pheromone evaporation
-- Animated GUI
+- World populated with food and ants  食物とアリが住む世界
+- Ants find food, bring home, drop pheromones  アリは食べ物を見つけ、家に持ち帰り、フェロモンを落とす
+- Sense pheromones, food, home  センスフェロモン、食品、家庭
+- Ants act independently, on multiple real threads  複数の実際のスレッドでAntが独立して動作する
+- Model pheromone evaporation  モデルフェロモン蒸発
+- Animated GUI  アニメーションGUI
 - < 250 lines of Clojure
 
 ----
