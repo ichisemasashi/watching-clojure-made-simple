@@ -31,3 +31,33 @@ Why 'transducer'?
 - on the way back/in, will carry inputs across a series of transformations
 
 ----
+
+Transducers in the Real World
+
+- 'put the baggage on the plane'
+- 'as you do that'
+  - break apart pallets
+  - remove bags that smell like food
+  - label heavy bags
+
+----
+
+Conveyances, sources, sinks are irrelevant
+
+- And unspecified
+- Does baggage come/go on trolleys or conveyor belts?
+
+  Rules don't care
+
+----
+
+Transformation in the Programming World
+
+- Collection function composition:
+
+(comp
+  (partial map label-heavy)
+  (partial filter non-food?)
+  (partial mapcat unbundle-pallet))
+
+----
