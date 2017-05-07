@@ -278,3 +278,117 @@ Processes Must Support Reduced
 - the final accumulation value is still subject to completion (more later)
 
 ----
+Transducer Types, Thus Far
+
+![figure-003](figure-003.png)
+
+----
+
+State
+
+- Some transducers require state e.g. take, partition-*
+- Must create unique state every time they are called upon to transform a step fn
+- Thus, once applied to a process, a transducer yields another (potentially statefull) process, which should not be aliased
+- Pass transducers around and let processes apply them
+
+---
+
+A Stateful Transducer
+
+(defn dropping-while [pred]
+  (fn [step]
+    (let [dv (volatile! true)]
+      (fn [r x]
+        (let [drop? @dv]
+          (if (and drop? (pred x))
+            r
+            (do
+              (vreset! dv false)
+              (step r x))))))))
+
+----
+
+Completion
+
+- Some processes complete, and will receive no more input
+- A process might want to do a final transformation of the value built up
+- A stateful transducer might want to flush a pending value
+- All step functions must have an arity-1 variant that does not take an input
+
+---
+
+Completion Operation
+
+- A completing process must call the completion operation on the final accumulated value, exactrly once
+- A transducer's completion operation must call its nested completion operation, exactrly once, and return what it returns
+- A stateful transducer may flush state (using the nested step function) prior to calling the nested complete*. partition-all and partition-while are examples.
+
+---
+
+Trausducer Types, Thus Far
+
+![figure-004](figure-004.png)
+
+---
+
+init
+
+- A reducing function may support arity-0, which returns an initial accumulation value
+- Transducers must support arity-0 init in terms of a call to the nested init
+
+user=> (+)
+0
+user=>(+ 21)
+21
+user=>(+ 21 21)
+42
+
+----
+
+Transducer Types
+
+![figure-005](figure-005.png)
+
+----
+
+Clojure Implementation
+
+- Reducing fns are just arity 0,1,2 functions
+- Transducers take and return reducing fns
+- Core sequence functions's collectionless arity now returns a transducer:
+  (mapping f) == (map f)
+- map, mapcat, filter, remove, take, take-while, drop, drop-while, take-nth, replace, partition-by, partition-all, keep, keep-indexed, cat, dedupe, random-sample...
+
+----
+
+Filter, returning a Transducer
+
+(defn filter
+  ([pred]
+    (fn [rf]
+      (fn
+        ([] (rf))
+        ([result] (rf result))
+        ([result input]
+          (if (pred input)
+            (rf result input)
+            result)))))
+  ([pred coll]
+    (sequence (filter pred) coll)))
+
+----
+
+The Goal
+
+![figure-006](figure-006.png)
+
+---
+
+Transducers
+
+- Transducers support context-independent definitions of data transformations
+- Reusable across a wide variety of contexts
+- Support early termination and completion
+- Composable via ordinary function composition
+- Efficient
+- Tasty
