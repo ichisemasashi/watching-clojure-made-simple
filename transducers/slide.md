@@ -4,10 +4,10 @@
 
 What are They?
 
-- extract the essence of map, filter et al
-- away from the functions that transform sequences/collections
-- so they can be used elsewhere
-- recasting them as process transformations
+- extract the essence of map, filter et al  map、filter等の本質を抽出する
+- away from the functions that transform sequences/collections  シーケンス/コレクションを変換する関数から離れている
+- so they can be used elsewhere  他の場所で使用することができます
+- recasting them as process transformations  プロセス変換として再作成する
 
 ---
 
