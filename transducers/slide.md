@@ -13,10 +13,10 @@ What are They?
 
 What Kinds of Processes?
 
-- ones that can be defined in terms of a succession of steps
-- where each step ingests an input
-- building a collection is just one instance
-- seeded left reduce is the generalization
+- ones that can be defined in terms of a succession of steps 一連のステップで定義できるもの
+- where each step ingests an input  各ステップで入力を取り込む
+- building a collection is just one instance  コレクションを構築することは単なるインスタンスに過ぎない
+- seeded left reduce is the generalization  シードされた左の削減は一般化です
 
 ----
 
@@ -28,24 +28,24 @@ Why 'transducer'?
   'carry into'
 - transduce
   'lead across'
-- on the way back/in, will carry inputs across a series of transformations
+- on the way back/in, will carry inputs across a series of transformations  途中で、一連の変換を介して入力を受け取ります
 
 ----
 
 Transducers in the Real World
 
-- 'put the baggage on the plane'
-- 'as you do that'
-  - break apart pallets
-  - remove bags that smell like food
-  - label heavy bags
+- 'put the baggage on the plane'  手荷物を飛行機に乗せる
+- 'as you do that'  あなたがそうするように
+  - break apart pallets  パレットを分解する
+  - remove bags that smell like food  食べ物のようなにおいがする袋を取り除く
+  - label heavy bags  ラベルの重い袋
 
 ----
 
-Conveyances, sources, sinks are irrelevant
+Conveyances, sources, sinks are irrelevant  運送、出典、シンクは無関係です
 
-- And unspecified
-- Does baggage come/go on trolleys or conveyor belts?
+- And unspecified  そして、不特定
+- Does baggage come/go on trolleys or conveyor belts?  手荷物はトロリーやコンベアベルトに乗っていますか？
 
   Rules don't care
 
