@@ -51,9 +51,9 @@ Conveyances, sources, sinks are irrelevant  運送、出典、シンクは無関
 
 ----
 
-Transformation in the Programming World
+Transformation in the Programming World  プログラミング世界における変換
 
-- Collection function composition:
+- Collection function composition:  コレクション関数の構成：
 
 (comp
   (partial map label-heavy)
@@ -62,7 +62,7 @@ Transformation in the Programming World
 
 ----
 
-Conveyances are everywhere
+Conveyances are everywhere  運送はどこにでもあります
 
 - map, filter, mapcat are functions of sequence -> sequence
 - 'rules' only work on sequences
