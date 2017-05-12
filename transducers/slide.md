@@ -72,25 +72,25 @@ Conveyances are everywhere  運送はどこにでもあります
 
 No reuse
 
-- Every new collection/process defines its own versions of map, filter, mapcat et al
+- Every new collection/process defines its own versions of map, filter, mapcat et al  新しいコレクション/プロセスはすべて、独自のバージョンのmap、filter、mapcatなどを定義します
   - MyCollection -> MyCollection
   - Stream -> Stream
   - Channel -> Channel
   - Observable -> Observable ...
-- Composed algorithms are needlessly specific and inefficient
+- Composed algorithms are needlessly specific and inefficient  合成されたアルゴリズムは、不必要に特定であり、非効率的である
 
 ----
 
-Creating Transducers
+Creating Transducers  トランスデューサの作成
 
 (def process-bags
   (comp
     (mappcatting unbundle-pallet)
     (filtering non-food?)
     (mapping label-heavy)))
-- mapcatting, filtering, mapping return transducers
+- mapcatting, filtering, mapping return transducers  
 - process-bags is a transducer
-- transducers modify a process by transforming its reducing function
+- transducers modify a process by transforming its reducing function  トランスデューサは、その低減関数を変換することによってプロセスを修正する
 
 ----
 
