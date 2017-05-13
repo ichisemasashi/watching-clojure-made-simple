@@ -111,11 +111,11 @@ Using Transducers
 
 ----
 
-Transducible Processes
+Transducible Processes 変換可能なプロセス
 
-- into, sequence, transduce, chan etc accept transducers
-- use the transducer to transform their (internal, encapsulated) reducing function
-- do their job with the transformed reducing function
+- into, sequence, transduce, chan etc accept transducers  シーケンス、トランスデューサ、チャンなどのトランスデューサを受け入れる
+- use the transducer to transform their (internal, encapsulated) reducing function  トランスデューサを使用して（内部、カプセル化された）縮小機能
+- do their job with the transformed reducing function  変換された還元関数で仕事をする
 
 ----
 Deriving Transducers
