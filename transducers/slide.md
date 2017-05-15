@@ -130,10 +130,10 @@ Deriving Transducers
 
 ---
 
-Many list fns can be defined in terms of foldr
+Many list fns can be defined in terms of foldr  多くのリストfnはfoldrの観点から定義できます
 
-- encapsulates the recursion
-- easier to reason about and transform
+- encapsulates the recursion  再帰をカプセル化する
+- easier to reason about and transform  簡単に推論して変換する
 
 (defn mapr [f coll]
   (foldr (fn [x r] (cons (f x) r))
@@ -144,9 +144,9 @@ Many list fns can be defined in terms of foldr
 
 ----
 
-Similarly, via reduce (foldl)
+Similarly, via reduce (foldl)同様に、還元（foldl）
 
-- returning eager, appendy vectors
+- returning eager, appendy vectors熱心な附属のベクトルを返す
 
 (defn mapl [f coll]
   (reduce (fn [r x] (conj r (f x)))
@@ -157,7 +157,7 @@ Similarly, via reduce (foldl)
 (defn mapcatl [f coll]
   (reduce (fn [r x] (reduce conj r (f x)))
           [] coll))
-* We want to get rid of 'conj'
+* We want to get rid of 'conj'  私たちは 'conj'を取り除きたい
 
 ---
 
