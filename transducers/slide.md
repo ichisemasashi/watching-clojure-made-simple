@@ -163,7 +163,7 @@ Similarly, via reduce (foldl)同様に、還元（foldl）
 
 Transducers
 
-- modify a process by transforming its reducing function
+- modify a process by transforming its reducing function  還元関数を変換することによってプロセスを修正する
 
 (defn mapping [f]
   (fn [step]
@@ -179,7 +179,7 @@ Transducers
 
 ---
 
-reduce-based map et al redux
+reduce-based map et al redux  還元ベースのマップ等還元
 
 (defn mapl [f coll]
   (reduce ((mapping f) conj)
